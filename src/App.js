@@ -1,55 +1,79 @@
-import React, { useEffect, Suspense, lazy } from 'react';
-import PropTypes from 'prop-types';
+import { useEffect, Suspense, lazy, memo } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { ErrorBoundary } from 'react-error-boundary';
 import Spinner from './components/spinner/Spinner.jsx';
 import './main.css';
 import AOS from 'aos';
 
-// Lazy load components
-const HomePage = lazy(() => import('./components/HomePage.jsx'));
-const NotFound = lazy(() => import('./components/NotFound.jsx'));
+// Lazy load components with better chunk names
+const HomePage = lazy(() =>
+    import(/* webpackChunkName: "home-page" */ './components/HomePage.jsx')
+);
+const NotFound = lazy(() =>
+    import(/* webpackChunkName: "not-found" */ './components/NotFound.jsx')
+);
 
-// Error boundary component
-class ErrorBoundary extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { hasError: false };
-  }
+// Memoized error fallback component
+const ErrorFallback = memo(({ error, resetErrorBoundary }) => (
+    <div role="alert" className="error-boundary">
+      <h1>Something went wrong:</h1>
+      <pre style={{ color: 'red' }}>{error.message}</pre>
+      <button onClick={resetErrorBoundary}>Try again</button>
+    </div>
+));
 
-  static getDerivedStateFromError() {
-    return { hasError: true };
-  }
+ErrorFallback.displayName = 'ErrorFallback';
 
-  componentDidCatch(error, info) {
-    console.error('ErrorBoundary caught an error', error, info);
-  }
+// Memoized loading component
+const LoadingFallback = memo(() => <Spinner size="large" />);
+LoadingFallback.displayName = 'LoadingFallback';
 
-  render() {
-    if (this.state.hasError) {
-      return <h1>Something went wrong.</h1>;
-    }
-
-    return this.props.children;
-  }
-}
-
-ErrorBoundary.propTypes = {
-  children: PropTypes.node.isRequired,
-};
-
-export default function App() {
+// Main App component
+function App() {
   useEffect(() => {
-    AOS.init({ once: true, duration: 700 });
+    // Initialize AOS with optimized settings
+    AOS.init({
+      once: true,
+      duration: 700,
+      // Performance optimizations
+      disable: 'mobile', // Disable on mobile for better performance
+      startEvent: 'DOMContentLoaded',
+      useClassNames: true,
+      disableMutationObserver: false,
+      debounceDelay: 50,
+      throttleDelay: 99,
+    });
+
+    // Cleanup function
+    return () => {
+      AOS.refresh();
+    };
   }, []);
 
+  // Error handler
+  const handleError = (error, errorInfo) => {
+    console.error('Application Error:', error);
+    console.error('Error Info:', errorInfo);
+
+    // You can send error reports to a service like Sentry here
+    // Sentry.captureException(error, { contexts: { errorInfo } });
+  };
+
   return (
-    <ErrorBoundary>
-      <Suspense fallback={<Spinner size="large" />}>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </Suspense>
-    </ErrorBoundary>
+      <ErrorBoundary
+          FallbackComponent={ErrorFallback}
+          onError={handleError}
+          onReset={() => window.location.reload()}
+      >
+        <Suspense fallback={<LoadingFallback />}>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
+      </ErrorBoundary>
   );
 }
+
+// Export memoized App component
+export default memo(App);

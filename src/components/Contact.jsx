@@ -36,11 +36,11 @@ const contactInfo = [
     icon: 'bi-telephone',
     title: 'Bel ons',
     content: (
-        <a href="tel:+31685108263" className="contact-link">
-          +31 6 8510 8263
+        <a href="tel:+31657122795" className="contact-link">
+          +31 6 57122795
         </a>
     ),
-    action: () => (window.location.href = 'tel:+31685108263'),
+    action: () => (window.location.href = 'tel:+31657122795'),
   },
   {
     icon: 'bi-whatsapp',

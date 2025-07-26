@@ -4,63 +4,255 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Title & Meta -->
-  <title>Fatayer Time - Authentieke Syrische Fatayer in Den Haag</title>
-  <meta name="description" content="Geniet van authentieke Syrische fatayer en specialiteiten, dagelijks vers bereid in Den Haag. Bestel online of bezoek ons restaurant!" />
-  <meta name="keywords" content="Fatayer Den Haag, Syrisch eten, Midden-Oosters restaurant, fast food, halal, Fatayer Time" />
+  <!-- Multi-language Support -->
+  <link rel="alternate" hreflang="nl" href="https://fatayertime.nl" />
+  <link rel="alternate" hreflang="en" href="https://fatayertime.nl/en" />
+  <link rel="alternate" hreflang="ar" href="https://fatayertime.nl/ar" />
+  <link rel="alternate" hreflang="x-default" href="https://fatayertime.nl" />
+
+  <!-- Enhanced Title & Meta for Catering/Events -->
+  <title>Fatayer Time - Syrische Catering, Feesten & Events | Den Haag Voorburg</title>
+  <meta name="description" content="Authentieke Syrische catering voor bedrijfsfeesten, verjaardagen, bruiloften & events. Fatayer, kebab, mezze. Bezorging Den Haag, Voorburg, Leidschendam. Bestel nu!" />
+
+  <!-- Extended Keywords for Catering/Events -->
+  <meta name="keywords" content="
+    Syrische catering Den Haag, Midden-Oosterse catering, halal catering,
+    bedrijfscatering Voorburg, verjaardagsfeest catering, bruiloft catering,
+    fatayer catering, kebab party, mezze platter,
+    corporate lunch Den Haag, graduation party food, birthday catering,
+    Middle Eastern restaurant Voorburg, Syrian food delivery,
+    حلال كيترنغ هولندا, فطائر سورية, مطعم عربي لاهاي,
+    Syrian catering Netherlands, halal party food, Middle Eastern events
+  " />
+
   <meta name="author" content="Fatayer Time" />
   <link rel="canonical" href="https://fatayertime.nl" />
   <meta name="theme-color" content="#cda45e" />
+
+  <!-- Geo-targeting -->
+  <meta name="geo.region" content="NL-ZH" />
+  <meta name="geo.placename" content="Voorburg, Den Haag" />
+  <meta name="geo.position" content="52.0765;4.3553" />
+  <meta name="ICBM" content="52.0765, 4.3553" />
+
+  <!-- Performance optimizations (keeping previous ones) -->
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="//www.google.com">
+  <link rel="dns-prefetch" href="//maps.google.com">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="%PUBLIC_URL%/favicon/logo.svg" />
   <link rel="alternate icon" href="%PUBLIC_URL%/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/logo.svg" />
 
-  <!-- Google Fonts (Modern + Arabic-friendly) -->
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet" />
-
-  <!-- Social Sharing: Open Graph -->
-  <meta property="og:title" content="Fatayer Time - Authentieke Syrische Fatayer" />
-  <meta property="og:description" content="Proef de echte Syrische smaken in Den Haag. Vers, halal en met liefde gemaakt." />
-  <meta property="og:image" content="%PUBLIC_URL%/logo.svg" />
-  <meta property="og:url" content="https://fatayertime.nl" />
-  <meta property="og:type" content="restaurant" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Fatayer Time - Authentieke Syrische Fatayer" />
-  <meta name="twitter:description" content="Vers gemaakte Syrische fatayer, snel en lekker!" />
-  <meta name="twitter:image" content="%PUBLIC_URL%/logo.svg" />
-
-  <!-- Structured Data (JSON-LD) -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Restaurant",
-      "name": "Fatayer Time",
-      "image": "https://fatayertime.nl/logo.svg",
-      "url": "https://fatayertime.nl",
-      "servesCuisine": "Middle Eastern",
-      "priceRange": "€",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Den Haag",
-        "addressCountry": "NL"
-      },
-      "telephone": "+31 6 12345678"
-    }
-  </script>
-
-  <!-- Preload critical CSS -->
+  <!-- Critical CSS -->
+  <link rel="preload" href="%PUBLIC_URL%/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
-  <!-- Fallback for CSS if JS disabled -->
-  <noscript>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
-  </noscript>
+  <!-- Google Fonts: Optimized loading -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&family=Tajawal:wght@400;500;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+
+  <!-- Enhanced Social Sharing -->
+  <meta property="og:title" content="Fatayer Time - Syrische Catering & Events | Den Haag" />
+  <meta property="og:description" content="Authentieke Syrische catering voor alle gelegenheden. Bedrijfsfeesten, verjaardagen, bruiloften. Halal, vers & heerlijk!" />
+  <meta property="og:image" content="%PUBLIC_URL%/images/catering-hero.jpg" />
+  <meta property="og:url" content="https://fatayertime.nl" />
+  <meta property="og:type" content="business.business" />
+  <meta property="og:locale" content="nl_NL" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:locale:alternate" content="ar_AR" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Fatayer Time - Syrische Catering Den Haag" />
+  <meta name="twitter:description" content="Authentieke Syrische catering voor bedrijfsfeesten, verjaardagen en events!" />
+  <meta name="twitter:image" content="%PUBLIC_URL%/images/catering-hero.jpg" />
+
+  <!-- Enhanced Structured Data for Restaurant + Catering -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["Restaurant", "FoodEstablishment", "LocalBusiness"],
+      "name": "Fatayer Time",
+      "alternateName": ["فطائر تايم", "Fatayer Time Catering"],
+      "image": [
+        "https://fatayertime.nl/images/restaurant-front.jpg",
+        "https://fatayertime.nl/images/catering-setup.jpg",
+        "https://fatayertime.nl/logo.svg"
+      ],
+      "@id": "https://fatayertime.nl",
+      "url": "https://fatayertime.nl",
+      "telephone": "+31657122795",
+      "email": "info@fatayertime.nl",
+      "servesCuisine": ["Middle Eastern", "Syrian", "Mediterranean", "Halal"],
+      "priceRange": "€€",
+      "currenciesAccepted": "EUR",
+      "paymentAccepted": ["Cash", "Credit Card", "iDEAL", "PayPal"],
+
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Kon. Julianalaan 274",
+        "addressLocality": "Voorburg",
+        "addressRegion": "Zuid-Holland",
+        "postalCode": "2274 JR",
+        "addressCountry": "NL"
+      },
+
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 52.0765011,
+        "longitude": 4.3553044
+      },
+
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "opens": "11:00",
+          "closes": "19:00"
+        }
+      ],
+
+      "hasMenu": {
+        "@type": "Menu",
+        "name": "Fatayer Time Menu",
+        "description": "Authentieke Syrische specialiteiten, fatayer, kebab, mezze",
+        "url": "https://fatayertime.nl#menu"
+      },
+
+      "makesOffer": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Catering Service",
+            "description": "Syrische catering voor bedrijfsfeesten, verjaardagen, bruiloften en events",
+            "areaServed": ["Den Haag", "Voorburg", "Leidschendam", "Wassenaar", "Rijswijk"]
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Party Catering",
+            "description": "Authentieke Syrische gerechten voor feesten en evenementen"
+          }
+        }
+      ],
+
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Den Haag"
+        },
+        {
+          "@type": "City",
+          "name": "Voorburg"
+        },
+        {
+          "@type": "City",
+          "name": "Leidschendam"
+        },
+        {
+          "@type": "City",
+          "name": "Wassenaar"
+        }
+      ],
+
+      "sameAs": [
+        "https://www.facebook.com/fatayertime",
+        "https://www.instagram.com/fatayertime",
+        "https://goo.gl/maps/YOUR_GOOGLE_MAPS_LINK"
+      ],
+
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "127"
+      }
+    }
+  </script>
+
+  <!-- Additional Event/Catering Structured Data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Syrische Catering Service",
+      "provider": {
+        "@type": "Restaurant",
+        "name": "Fatayer Time"
+      },
+      "areaServed": {
+        "@type": "State",
+        "name": "Zuid-Holland"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Catering Packages",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Corporate Catering",
+              "description": "Bedrijfslunch en -borrels met Syrische specialiteiten"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Birthday Party Catering",
+              "description": "Verjaardagsfeesten met authentieke Syrische gerechten"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Wedding Catering",
+              "description": "Bruiloft catering met traditionele Midden-Oosterse keuken"
+            }
+          }
+        ]
+      }
+    }
+  </script>
+
+  <!-- Breadcrumb Structured Data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://fatayertime.nl"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Menu",
+          "item": "https://fatayertime.nl#menu"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Catering",
+          "item": "https://fatayertime.nl#catering"
+        }
+      ]
+    }
+  </script>
+
 </head>
 
 <body>

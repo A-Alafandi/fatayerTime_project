@@ -19,7 +19,6 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Fixed: Add/remove class to body AND navmenu container
   useEffect(() => {
     if (navOpen) {
       document.body.classList.add('mobile-nav-active');
@@ -28,7 +27,6 @@ const Header = () => {
     }
   }, [navOpen]);
 
-  // --- Removed unused scrollLinkProps ---
 
   // Custom smooth scroll function for better control
   const handleSmoothScroll = (target) => {
@@ -77,7 +75,7 @@ const Header = () => {
               </li>
               <li>
                 <button
-                  onClick={() => handleSmoothScroll('services')}
+                  onClick={() => handleSmoothScroll('why-us')}
                   className="nav-link"
                   style={{ flexDirection: 'column-reverse', alignItems: 'center' }}
                 >
