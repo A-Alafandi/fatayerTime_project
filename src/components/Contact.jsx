@@ -1,10 +1,9 @@
-
-import { useState, useEffect } from "react"
+import { useState, useEffect } from 'react';
 
 const contactInfo = [
   {
-    icon: "bi-geo-alt",
-    title: "Locatie",
+    icon: 'bi-geo-alt',
+    title: 'Locatie',
     content: (
         <>
           Kon. Julianalaan 274
@@ -14,13 +13,13 @@ const contactInfo = [
     ),
     action: () =>
         window.open(
-            "https://www.google.com/maps/place/Fatayer+Time/@52.0765141,4.352726,17z/data=!4m15!1m8!3m7!1s0x47c5b79df86d7ddf:0xe2e7ae262040b6b9!2sFatayer+Time!8m2!3d52.0765011!4d4.3553044!10e1!16s%2Fg%2F11qqpbxst2!3m5!1s0x47c5b79df86d7ddf:0xe2e7ae262040b6b9!8m2!3d52.0765011!4d4.3553044!16s%2Fg%2F11qqpbxst2?hl=en-GB&entry=ttu&g_ep=EgoyMDI1MDcyMi4wIKXMDSoASAFQAw%3D%3D",
-            "_blank",
+            'https://www.google.com/maps/place/Fatayer+Time/@52.0765141,4.352726,17z/data=!4m15!1m8!3m7!1s0x47c5b79df86d7ddf:0xe2e7ae262040b6b9!2sFatayer+Time!8m2!3d52.0765011!4d4.3553044!10e1!16s%2Fg%2F11qqpbxst2!3m5!1s0x47c5b79df86d7ddf:0xe2e7ae262040b6b9!8m2!3d52.0765011!4d4.3553044!16s%2Fg%2F11qqpbxst2?hl=en-GB&entry=ttu&g_ep=EgoyMDI1MDcyMi4wIKXMDSoASAFQAw%3D%3D',
+            '_blank',
         ),
   },
   {
-    icon: "bi-clock",
-    title: "Openingstijden",
+    icon: 'bi-clock',
+    title: 'Openingstijden',
     content: (
         <>
         <span className="schedule-day">
@@ -34,101 +33,103 @@ const contactInfo = [
     ),
   },
   {
-    icon: "bi-telephone",
-    title: "Bel ons",
+    icon: 'bi-telephone',
+    title: 'Bel ons',
     content: (
         <a href="tel:+31685108263" className="contact-link">
           +31 6 8510 8263
         </a>
     ),
-    action: () => (window.location.href = "tel:+31685108263"),
+    action: () => (window.location.href = 'tel:+31685108263'),
   },
   {
-    icon: "bi-whatsapp",
-    title: "WhatsApp",
+    icon: 'bi-whatsapp',
+    title: 'WhatsApp',
     content: (
         <a href="https://wa.me/+31657122795" className="contact-link">
           +31 6 57122795
         </a>
     ),
-    action: () => (window.location.href = "https://wa.me/+31657122795"),
+    action: () => (window.location.href = 'https://wa.me/+31657122795'),
   },
-]
+];
 
 export default function Contact() {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-    access_key: "5a6494c7-02ae-446e-8b25-3c1f4c073a66",
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState(null)
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+    honeypot: '', // Added honeypot to initial state
+    access_key: '5a6494c7-02ae-446e-8b25-3c1f4c073a66',
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
 
   useEffect(() => {
     // Initialize AOS if available
-    if (typeof window !== "undefined" && window.AOS) {
+    if (typeof window !== 'undefined' && window.AOS) {
       window.AOS.init({
         duration: 600,
-        easing: "ease-in-out",
+        easing: 'ease-in-out',
         once: true,
         mirror: false,
-      })
+      });
     }
-  }, [])
+  }, []);
 
   const handleInputChange = (e) => {
-    const { name, value } = e.target
+    const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
       [name]: value,
-    }))
-  }
+    }));
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (formData.honeypot) {
-      setSubmitStatus("error");
+      setSubmitStatus('error');
       return;
     }
     setIsSubmitting(true);
     setSubmitStatus(null);
 
-    // Remove honeypot from the data being sent
+    // Remove honeypot from the data being sent (honeypot is used for spam protection)
+    // eslint-disable-next-line no-unused-vars
     const { honeypot, ...formDataToSend } = formData;
 
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
         },
         body: JSON.stringify(formDataToSend),
       });
 
       const result = await response.json();
       if (result.success) {
-        setSubmitStatus("success");
+        setSubmitStatus('success');
         setFormData({
-          name: "",
-          email: "",
-          subject: "",
-          message: "",
-          honeypot: "",
-          access_key: "5a6494c7-02ae-446e-8b25-3c1f4c073a66",
+          name: '',
+          email: '',
+          subject: '',
+          message: '',
+          honeypot: '',
+          access_key: '5a6494c7-02ae-446e-8b25-3c1f4c073a66',
         });
       } else {
-        setSubmitStatus("error");
+        setSubmitStatus('error');
       }
     } catch (error) {
-      setSubmitStatus("error");
+      console.error('Contact form submission error:', error);
+      setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
     }
   };
-
 
   return (
       <section id="contact" className="contact section">
@@ -176,41 +177,62 @@ export default function Contact() {
               <div className="contact-info-wrapper">
                 <h3 className="info-section-title">Neem contact op</h3>
                 <p className="info-section-subtitle">
-                  We horen graag van je! Neem contact met ons op voor reserveringen, vragen of gewoon om hallo te zeggen.
+                  We horen graag van je! Neem contact met ons op voor reserveringen, vragen of gewoon
+                  om hallo te zeggen.
                 </p>
 
                 <div className="contact-info-grid">
-                  {contactInfo.map((item, index) => (
-                      <div
-                          key={index}
-                          className={`info-item ${item.action ? "clickable" : ""}`}
-                          data-aos="fade-up"
-                          data-aos-delay={300 + index * 100}
-                          onClick={item.action}
-                          onKeyDown={(e) => {
-                            if ((e.key === "Enter" || e.key === " ") && item.action) {
-                              e.preventDefault()
-                              item.action()
-                            }
-                          }}
-                          role={item.action ? "button" : undefined}
-                          tabIndex={item.action ? 0 : undefined}
-                          aria-label={
-                            item.action
-                                ? `${item.title} - Click to ${item.title === "Locatie" ? "open map" : item.title === "Bel ons" ? "call" : "send WhatsApp message"}`
-                                : undefined
-                          }
-                      >
-                        <div className="info-icon-wrapper">
-                          <i className={`bi ${item.icon}`} aria-hidden="true"></i>
-                          <div className="icon-ripple"></div>
-                        </div>
-                        <div className="info-content">
-                          <h4>{item.title}</h4>
-                          <div className="info-text">{item.content}</div>
-                        </div>
-                      </div>
-                  ))}
+                  {contactInfo.map((item, index) =>
+                      item.action ? (
+                          <div
+                              key={index}
+                              className={`info-item clickable`}
+                              data-aos="fade-up"
+                              data-aos-delay={300 + index * 100}
+                              onClick={item.action}
+                              onKeyDown={(e) => {
+                                if ((e.key === 'Enter' || e.key === ' ') && item.action) {
+                                  e.preventDefault();
+                                  item.action();
+                                }
+                              }}
+                              role="button"
+                              tabIndex={0}
+                              aria-label={
+                                item.title === 'Locatie'
+                                    ? 'Open map'
+                                    : item.title === 'Bel ons'
+                                        ? 'Call'
+                                        : 'Send WhatsApp message'
+                              }
+                          >
+                            <div className="info-icon-wrapper">
+                              <i className={`bi ${item.icon}`} aria-hidden="true"></i>
+                              <div className="icon-ripple"></div>
+                            </div>
+                            <div className="info-content">
+                              <h4>{item.title}</h4>
+                              <div className="info-text">{item.content}</div>
+                            </div>
+                          </div>
+                      ) : (
+                          <div
+                              key={index}
+                              className="info-item"
+                              data-aos="fade-up"
+                              data-aos-delay={300 + index * 100}
+                          >
+                            <div className="info-icon-wrapper">
+                              <i className={`bi ${item.icon}`} aria-hidden="true"></i>
+                              <div className="icon-ripple"></div>
+                            </div>
+                            <div className="info-content">
+                              <h4>{item.title}</h4>
+                              <div className="info-text">{item.content}</div>
+                            </div>
+                          </div>
+                      )
+                  )}
                 </div>
               </div>
             </div>
@@ -223,10 +245,20 @@ export default function Contact() {
                   <p>Vul het formulier in en we nemen zo snel mogelijk contact met je op.</p>
                 </div>
 
-                <form onSubmit={handleSubmit} className="modern-contact-form" data-aos="fade-up" data-aos-delay="300">
+                <form
+                    onSubmit={handleSubmit}
+                    className="modern-contact-form"
+                    data-aos="fade-up"
+                    data-aos-delay="300"
+                >
                   <input type="hidden" name="access_key" value={formData.access_key} />
-                  <div style={{ display: "none" }}>
-                    <input type="text" name="honeypot" value={formData.honeypot} onChange={handleInputChange} />
+                  <div style={{ display: 'none' }}>
+                    <input
+                        type="text"
+                        name="honeypot"
+                        value={formData.honeypot}
+                        onChange={handleInputChange}
+                    />
                   </div>
 
                   <div className="form-grid">
@@ -301,7 +333,7 @@ export default function Contact() {
 
                   {submitStatus && (
                       <div className={`form-status ${submitStatus}`}>
-                        {submitStatus === "success" ? (
+                        {submitStatus === 'success' ? (
                             <>
                               <i className="bi bi-check-circle"></i>
                               Bedankt! Je bericht is verzonden. We nemen binnenkort contact op.
@@ -336,5 +368,5 @@ export default function Contact() {
           </div>
         </div>
       </section>
-  )
+  );
 }
