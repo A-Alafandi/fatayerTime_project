@@ -1,6 +1,7 @@
 import { useEffect, Suspense, lazy, memo } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { ErrorBoundary } from 'react-error-boundary';
+import PropTypes from 'prop-types';
 import Spinner from './components/spinner/Spinner.jsx';
 import './main.css';
 import AOS from 'aos';
@@ -23,6 +24,14 @@ const ErrorFallback = memo(({ error, resetErrorBoundary }) => (
 ));
 
 ErrorFallback.displayName = 'ErrorFallback';
+
+// Add PropTypes validation
+ErrorFallback.propTypes = {
+  error: PropTypes.shape({
+    message: PropTypes.string.isRequired
+  }).isRequired,
+  resetErrorBoundary: PropTypes.func.isRequired
+};
 
 // Memoized loading component
 const LoadingFallback = memo(() => <Spinner size="large" />);
