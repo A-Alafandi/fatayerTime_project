@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="89eac788-614d-4c31-aa2f-5e5273cb8fcc" name="Changes" comment="add admin full css" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="package.json" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="new-main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;A-Alafandi&quot;
+  }
+}</component>
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1753309257" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="new-main" />
+                    <option name="lastUsedInstant" value="1753309145" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="fix-jwt-error" />
+                    <option name="lastUsedInstant" value="1752499572" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$/.." />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/A-Alafandi/FatayerTime.git&quot;,
+    &quot;accountId&quot;: &quot;1c8a9045-88cf-4c52-8420-b77d3e55e8f5&quot;
+  }
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2z0wjgkfGlRGnz8UCfrVycqmqVs" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/FatayerTime&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\My projects\\FatayerTime\\client\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\My projects\FatayerTime\client\public\favicon" />
+      <recent name="D:\My projects\FatayerTime\client\src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\FatayerTime\src\components" />
+      <recent name="D:\My projects\FatayerTime\client\public" />
+      <recent name="D:\My projects\FatayerTime\client\src\assets" />
+      <recent name="D:\My projects\FatayerTime\client\src\components" />
+      <recent name="D:\My projects\FatayerTime\client\src\assets\img" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-WS-251.27812.2" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="89eac788-614d-4c31-aa2f-5e5273cb8fcc" name="Changes" comment="" />
+      <created>1750881435121</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1750881435121</updated>
+      <workItem from="1750881436218" duration="149000" />
+      <workItem from="1751223192600" duration="644000" />
+      <workItem from="1751458857750" duration="15469000" />
+      <workItem from="1751535980909" duration="15912000" />
+      <workItem from="1751632621297" duration="45227000" />
+      <workItem from="1751793040122" duration="36000" />
+      <workItem from="1751821051290" duration="6284000" />
+      <workItem from="1751976234250" duration="1812000" />
+      <workItem from="1752066125348" duration="17620000" />
+      <workItem from="1752182065784" duration="19454000" />
+      <workItem from="1752439507503" duration="30938000" />
+      <workItem from="1752593091495" duration="16094000" />
+      <workItem from="1752666615914" duration="18658000" />
+      <workItem from="1752749028272" duration="19000" />
+      <workItem from="1752749072429" duration="401000" />
+      <workItem from="1752749633407" duration="34844000" />
+      <workItem from="1752834915924" duration="36638000" />
+      <workItem from="1753300500526" duration="5855000" />
+      <workItem from="1753531258433" duration="2309000" />
+      <workItem from="1753533648992" duration="2147000" />
+    </task>
+    <task id="LOCAL-00001" summary="Add admindashboard and fix Css">
+      <option name="closed" value="true" />
+      <created>1751654256568</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1751654256568</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Fix menu page style">
+      <option name="closed" value="true" />
+      <created>1751708540420</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1751708540420</updated>
+    </task>
+    <task id="LOCAL-00003" summary="add admindashboard full with new style">
+      <option name="closed" value="true" />
+      <created>1752102291534</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1752102291534</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add admindashboard full with new style">
+      <option name="closed" value="true" />
+      <created>1752185350539</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1752185350539</updated>
+    </task>
+    <task id="LOCAL-00005" summary="add admindashboard full with new style">
+      <option name="closed" value="true" />
+      <created>1752435438134</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1752435438134</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add admindashboard full with new style">
+      <option name="closed" value="true" />
+      <created>1752445552400</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1752445552400</updated>
+    </task>
+    <task id="LOCAL-00007" summary="add admindashboard full with new style">
+      <option name="closed" value="true" />
+      <created>1752761941907</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1752761941907</updated>
+    </task>
+    <task id="LOCAL-00008" summary="add admindashboard full with new style">
+      <option name="closed" value="true" />
+      <created>1752761991310</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1752761991310</updated>
+    </task>
+    <task id="LOCAL-00009" summary="add admindashboard full with new style">
+      <option name="closed" value="true" />
+      <created>1753228571121</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1753228571121</updated>
+    </task>
+    <task id="LOCAL-00010" summary="add admindashboard full with new style">
+      <option name="closed" value="true" />
+      <created>1753228610029</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1753228610029</updated>
+    </task>
+    <task id="LOCAL-00011" summary="add admindashboard full with new style">
+      <option name="closed" value="true" />
+      <created>1753308749446</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1753308749446</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add admindashboard and fix Css" />
+    <MESSAGE value="Fix menu page style" />
+    <MESSAGE value="add admindashboard full with new style" />
+    <MESSAGE value="this is the new branch" />
+    <MESSAGE value="add admin full css" />
+    <option name="LAST_COMMIT_MESSAGE" value="add admin full css" />
+  </component>
+</project>
