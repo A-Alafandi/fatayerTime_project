@@ -27,7 +27,7 @@ const Hero = () => {
           >
             Online Bestellen
           </a>
-          <a href="#services" className="cta-btn">
+          <a href="#contact" className="cta-btn">
             Afhalen
           </a>
         </div>

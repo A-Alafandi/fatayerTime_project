@@ -2227,19 +2227,28 @@ section,
 }
 
 .menu-modal .btn-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: none;
   border: none;
   color: var(--default-color);
-  font-size: 1.5rem;
+  font-size: 2rem;
   cursor: pointer;
-  padding: 0.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
   border-radius: 50%;
-  transition: all 0.3s;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  position: relative;
 }
 
-.menu-modal .btn-close:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 80%);
+.menu-modal .btn-close:hover,
+.menu-modal .btn-close:focus {
+  background: color-mix(in srgb, var(--accent-color) 20%, transparent 60%);
   color: var(--accent-color);
+  box-shadow: 0 0 0 2px var(--accent-color, #f25c05);
+  outline: none;
 }
 
 .menu-modal .modal-body {

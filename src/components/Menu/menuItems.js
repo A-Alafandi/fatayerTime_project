@@ -1,339 +1,444 @@
 export const menu = [
   {
-    id: '1',
-    name: 'Fatayer Syrisch Kaas',
-    description:
-      'Traditional Syrian pie filled with creamy white cheese, parsley, and black sesame.',
-    price: 1.9,
-    category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
-    isVegetarian: true,
-    isSpicy: false,
-    ingredients: ['Syrian Cheese', 'Parsley', 'Egg', 'Black Sesame', 'Dough'],
+    "id": "1",
+    "name": "Fatayer Syrische Kaas",
+    "description": "Traditioneel Syrisch gebakje gevuld met romige witte kaas, verse peterselie en zwarte sesam.",
+    "price": 1.9,
+    "category": "Fatayer",
+    "imageUrl": "https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg",
+    "isVegetarian": true,
+    "isSpicy": false,
+    "ingredients": [
+      "Syrische kaas",
+      "Peterselie",
+      "Ei",
+      "Zwarte sesam",
+      "Deeg"
+    ]
   },
   {
-    id: '2',
-    name: "Manosheh Zaa'tar",
-    description: 'A Levantine flatbread topped with a fragrant mix of thyme and olive oil.',
-    price: 1.9,
-    category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
-    isVegetarian: true,
-    isSpicy: false,
-    ingredients: ["Za'atar (Thyme)", 'Olive Oil', 'Dough'],
+    "id": "2",
+    "name": "Manosheh Za'atar",
+    "description": "Levantijns platbrood belegd met geurige za’atar en extra vergine olijfolie.",
+    "price": 1.9,
+    "category": "Fatayer",
+    "imageUrl": "https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg",
+    "isVegetarian": true,
+    "isSpicy": false,
+    "ingredients": [
+      "Za’atar (tijm)",
+      "Olijfolie",
+      "Deeg"
+    ]
   },
   {
-    id: '3',
-    name: 'Fatayer Muhamara',
-    description: 'Savory pie filled with spicy red pepper paste, onions, and a blend of herbs.',
-    price: 1.9,
-    category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
-    isVegetarian: true,
-    isSpicy: true,
-    ingredients: ['Tomato', 'Red Bell Pepper', 'Onion', 'Black Sesame', 'Spices', 'Dough'],
+    "id": "3",
+    "name": "Fatayer Muhammara",
+    "description": "Hartig gebak gevuld met pittige rodepaprikapasta, uien en aromatische kruiden.",
+    "price": 1.9,
+    "category": "Fatayer",
+    "imageUrl": "https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg",
+    "isVegetarian": true,
+    "isSpicy": true,
+    "ingredients": [
+      "Tomaat",
+      "Rode paprika",
+      "Ui",
+      "Zwarte sesam",
+      "Specerijen",
+      "Deeg"
+    ]
   },
   {
-    id: '4',
-    name: 'Fatayer Muhamara met Kaas',
-    description: 'A flavorful mix of Muhamara sauce and cheese in a baked pastry.',
-    price: 1.9,
-    category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
-    isVegetarian: true,
-    isSpicy: true,
-    ingredients: ['Muhamara Sauce', 'Cheese', 'Dough'],
+    "id": "4",
+    "name": "Fatayer Muhammara met Kaas",
+    "description": "Smaakvolle combinatie van muhammara en gesmolten kaas in vers gebakken deeg.",
+    "price": 1.9,
+    "category": "Fatayer",
+    "imageUrl": "https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg",
+    "isVegetarian": true,
+    "isSpicy": true,
+    "ingredients": [
+      "Muhammara",
+      "Kaas",
+      "Deeg"
+    ]
   },
   {
-    id: '5',
-    name: "Fatayer Zaa'tar met Kaas",
-    description: "Rich blend of za'atar, olive oil, and cheese in traditional dough.",
-    price: 1.9,
-    category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
-    isVegetarian: true,
-    isSpicy: false,
-    ingredients: ['Syrian Cheese', "Za'atar (Thyme)", 'Olive Oil', 'Dough'],
+    "id": "5",
+    "name": "Fatayer Za'atar met Kaas",
+    "description": "Ambachtelijk gebak met za’atar, olijfolie en romige kaas – een klassieker uit het Midden-Oosten.",
+    "price": 1.9,
+    "category": "Fatayer",
+    "imageUrl": "https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg",
+    "isVegetarian": true,
+    "isSpicy": false,
+    "ingredients": [
+      "Syrische kaas",
+      "Za’atar (tijm)",
+      "Olijfolie",
+      "Deeg"
+    ]
   },
   {
-    id: '6',
-    name: 'Fatayer Kaas',
-    description: 'Classic cheese-filled pastry with a gooey mix of mozzarella and goudse kaas.',
-    price: 2.5,
-    category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
-    isVegetarian: true,
-    isSpicy: false,
-    ingredients: ['Gouda Cheese', 'Mozzarella', 'Dough'],
+    "id": "6",
+    "name": "Fatayer Kaas",
+    "description": "Traditioneel gebak met gesmolten mozzarella en goudse kaas – rijk en romig.",
+    "price": 2.5,
+    "category": "Fatayer",
+    "imageUrl": "https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg",
+    "isVegetarian": true,
+    "isSpicy": false,
+    "ingredients": [
+      "Goudse kaas",
+      "Mozzarella",
+      "Deeg"
+    ]
   },
   {
-    id: '7',
-    name: 'Mini Pizza',
-    description: 'Bite-sized pizzas topped with cheese and tomato sauce, perfect for snacking.',
-    price: 2.5,
-    category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
-    isVegetarian: true,
-    isSpicy: false,
-    ingredients: ['Cheese', 'Tomato Sauce', 'Dough'],
+    "id": "7",
+    "name": "Mini Pizza",
+    "description": "Mini pizza’s met tomatensaus en kaas – ideaal als snack of bijgerecht.",
+    "price": 2.5,
+    "category": "Fatayer",
+    "imageUrl": "https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg",
+    "isVegetarian": true,
+    "isSpicy": false,
+    "ingredients": [
+      "Kaas",
+      "Tomatensaus",
+      "Deeg"
+    ]
   },
   {
-    id: '8',
-    name: 'Fatayer Worst met Kaas',
-    description: 'Delicious mix of chicken sausage and cheese, wrapped in soft dough.',
-    price: 2.5,
-    category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
-    isVegetarian: false,
-    isSpicy: true,
-    ingredients: ['Chicken Sausage', 'Muhamara Sauce', 'Cheese', 'Dough'],
+    "id": "8",
+    "name": "Fatayer Worst met Kaas",
+    "description": "Zachte deeg gevuld met kipworst, muhammara en gesmolten kaas – hartig en pittig.",
+    "price": 2.5,
+    "category": "Fatayer",
+    "imageUrl": "https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg",
+    "isVegetarian": false,
+    "isSpicy": true,
+    "ingredients": [
+      "Kipworst",
+      "Muhammara",
+      "Kaas",
+      "Deeg"
+    ]
   },
   {
-    id: '9',
-    name: 'Fatayer Gekruiden Gehakt',
-    description: 'Spiced minced beef pastry with a rich blend of traditional herbs.',
-    price: 2.5,
-    category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
-    isVegetarian: false,
-    isSpicy: true,
-    ingredients: ['Minced Beef', 'Spices', 'Dough'],
+    "id": "9",
+    "name": "Fatayer Gekruid Gehakt",
+    "description": "Kruidige rundergehakt in knapperig deeg – vol van smaak.",
+    "price": 2.5,
+    "category": "Fatayer",
+    "imageUrl": "https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg",
+    "isVegetarian": false,
+    "isSpicy": true,
+    "ingredients": [
+      "Rundergehakt",
+      "Specerijen",
+      "Deeg"
+    ]
   },
   {
-    id: '10',
-    name: 'Fatayer Toshka',
-    description: 'A heartier pie packed with seasoned meat and cheese, full of flavor.',
-    price: 3.0,
-    category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
-    isVegetarian: false,
-    isSpicy: true,
-    ingredients: ['Minced Beef', 'Cheese', 'Spices', 'Dough'],
+    "id": "10",
+    "name": "Fatayer Toshka",
+    "description": "Vullende pastei met gekruid gehakt en gesmolten kaas – een stevige bite.",
+    "price": 2.5,
+    "category": "Fatayer",
+    "imageUrl": "https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg",
+    "isVegetarian": false,
+    "isSpicy": true,
+    "ingredients": [
+      "Rundergehakt",
+      "Kaas",
+      "Specerijen",
+      "Deeg"
+    ]
   },
   {
-    id: '11',
-    name: 'Fatayer Olijf',
-    description: 'Savory pastry filled with green olives, a light muhamara sauce, and oil.',
-    price: 1.9,
-    category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
-    isVegetarian: true,
-    isSpicy: false,
-    ingredients: ['Olives', 'Muhamara Sauce', 'Olive Oil', 'Dough'],
+    "id": "11",
+    "name": "Fatayer Olijf",
+    "description": "Gebakje met groene olijven, lichte muhammara en een vleugje olijfolie.",
+    "price": 2.5,
+    "category": "Fatayer",
+    "imageUrl": "https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg",
+    "isVegetarian": true,
+    "isSpicy": false,
+    "ingredients": [
+      "Groene olijven",
+      "Muhammara",
+      "Olijfolie",
+      "Deeg"
+    ]
   },
   {
-    id: '12',
-    name: 'Fatayer Spinazie',
-    description: 'A healthy mix of spinach, onion, and walnuts with a tangy syrup twist.',
-    price: 1.9,
-    category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
-    isVegetarian: true,
-    isSpicy: false,
-    ingredients: ['Spinach', 'Onion', 'Walnuts', 'Pomegranate Syrup', 'Sumac', 'Dough'],
+    "id": "12",
+    "name": "Fatayer Spinazie",
+    "description": "Spinaziegebak met ui, walnoten en granaatappelsiroop – fris en gezond.",
+    "price": 2.5,
+    "category": "Fatayer",
+    "imageUrl": "https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg",
+    "isVegetarian": true,
+    "isSpicy": false,
+    "ingredients": [
+      "Spinazie",
+      "Ui",
+      "Walnoten",
+      "Granaatappelsiroop",
+      "Sumak",
+      "Deeg"
+    ]
   },
   {
-    id: '13',
-    name: 'Fatayer Kip Curry met Kaas',
-    description: 'Creamy chicken curry with cheese baked into a golden crust.',
-    price: 2.5,
-    category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
-    isVegetarian: false,
-    isSpicy: true,
-    ingredients: ['Chicken', 'Curry Spices', 'Cheese', 'Dough'],
+    "id": "13",
+    "name": "Fatayer Kip Curry met Kaas",
+    "description": "Gebakken fatayer met kip in currysaus en romige kaas – heerlijk kruidig.",
+    "price": 2.5,
+    "category": "Fatayer",
+    "imageUrl": "https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg",
+    "isVegetarian": false,
+    "isSpicy": true,
+    "ingredients": [
+      "Kip",
+      "Currykruiden",
+      "Kaas",
+      "Deeg"
+    ]
   },
   {
-    id: '14',
-    name: 'Fatayer Philadelphia',
-    description: 'A luxury blend of veal, vegetables, and cheese baked to perfection.',
-    price: 4.0,
-    category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
-    isVegetarian: false,
-    isSpicy: false,
-    ingredients: ['Veal', 'Bell Pepper', 'Corn', 'Mushrooms', 'Onion', 'Dough'],
+    "id": "14",
+    "name": "Fatayer Philadelphia",
+    "description": "Luxe fatayer gevuld met kalfsvlees, groenten en kaas – een ware traktatie.",
+    "price": 4.0,
+    "category": "Fatayer",
+    "imageUrl": "https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg",
+    "isVegetarian": false,
+    "isSpicy": false,
+    "ingredients": [
+      "Kalfsvlees",
+      "Paprika",
+      "Maïs",
+      "Champignons",
+      "Ui",
+      "Deeg"
+    ]
   },
   {
-    id: '15',
-    name: 'Sfeha (Gehakt - per kilo)',
-    description: 'Open pie with minced meat, tomato, and pomegranate syrup, sold per kilo.',
-    price: 1.0,
-    category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
-    isVegetarian: false,
-    isSpicy: true,
-    ingredients: ['Minced Meat', 'Tomato', 'Pomegranate Syrup', 'Onion', 'Dough'],
+    "id": "15",
+    "name": "Sfeha (Gehakt - per kilo)",
+    "description": "Open fatayer met gekruid gehakt, tomaat en granaatappelsiroop – verkocht per kilo.",
+    "price": 0.65,
+    "category": "Fatayer",
+    "imageUrl": "https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg",
+    "isVegetarian": false,
+    "isSpicy": true,
+    "ingredients": [
+      "Gehakt",
+      "Tomaat",
+      "Granaatappelsiroop",
+      "Ui",
+      "Deeg"
+    ]
   },
   {
-    id: '16',
-    name: 'Mexicaanse Tonijn',
-    description: 'Spicy tuna pie with vegetables, inspired by Mexican flavors.',
-    price: 4.0,
-    category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
-    isVegetarian: false,
-    isSpicy: true,
-    ingredients: ['Tuna', 'Paprika', 'Corn', 'Onion', 'Mushrooms', 'Dough'],
+    "id": "16",
+    "name": "Mexicaanse Tonijn",
+    "description": "Pittige tonijn met groenten in Mexicaanse stijl – voor liefhebbers van scherp.",
+    "price": 4.0,
+    "category": "Fatayer",
+    "imageUrl": "https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg",
+    "isVegetarian": false,
+    "isSpicy": true,
+    "ingredients": [
+      "Tonijn",
+      "Paprika",
+      "Maïs",
+      "Ui",
+      "Champignons",
+      "Deeg"
+    ]
   },
   {
-    id: '17',
-    name: 'Fatayer Mayo Cheese',
-    description: 'Cheesy fatayer with a creamy garlic mayo twist and olives.',
-    price: 2.5,
-    category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
-    isVegetarian: true,
-    isSpicy: false,
-    ingredients: ['Gouda Cheese', 'Black Olives', 'Egg', 'Garlic Cream', 'Dough'],
+    "id": "17",
+    "name": "Fatayer Mayo Kaas",
+    "description": "Romige kaasfatayer met knoflooksaus en zwarte olijven – smeuïg en vol.",
+    "price": 2.5,
+    "category": "Fatayer",
+    "imageUrl": "https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg",
+    "isVegetarian": true,
+    "isSpicy": false,
+    "ingredients": [
+      "Goudse kaas",
+      "Zwarte olijven",
+      "Ei",
+      "Knoflooksaus",
+      "Deeg"
+    ]
   },
   {
-    id: '18',
-    name: 'Fatayer Steak',
-    description: 'Juicy veal steak pieces wrapped in fresh dough – pure indulgence.',
-    price: 4.0,
-    category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
-    isVegetarian: false,
-    isSpicy: false,
-    ingredients: ['Veal', 'Dough'],
+    "id": "18",
+    "name": "Fatayer Steak",
+    "description": "Malse stukjes kalfsbiefstuk gewikkeld in vers gebakken deeg.",
+    "price": 4.0,
+    "category": "Fatayer",
+    "imageUrl": "https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg",
+    "isVegetarian": false,
+    "isSpicy": false,
+    "ingredients": [
+      "Kalfsvlees",
+      "Deeg"
+    ]
   },
   {
-    id: '19',
-    name: 'Fatayer 2 soorten Kaas met zwarte olijf',
-    description: 'Two-cheese blend with black olives in a light pastry.',
-    price: 2.5,
-    category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
-    isVegetarian: true,
-    isSpicy: false,
-    ingredients: ['Spreadable Cheese', 'Gouda Cheese', 'Black Olives', 'Dough'],
+    "id": "19",
+    "name": "Fatayer 2 Kaassoorten met zwarte olijf",
+    "description": "Twee soorten kaas en zwarte olijven – perfect gebakken in licht deeg.",
+    "price": 0.65,
+    "category": "Fatayer",
+    "imageUrl": "https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg",
+    "isVegetarian": true,
+    "isSpicy": false,
+    "ingredients": [
+      "Smeerkaas",
+      "Goudse kaas",
+      "Zwarte olijven",
+      "Deeg"
+    ]
   },
   {
-    id: '20',
-    name: 'Fatayer Mayo Hot Dog',
-    description: 'A hotdog twist on fatayer with cheese, olives, and creamy mayo.',
-    price: 2.75,
-    category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
-    isVegetarian: false,
-    isSpicy: false,
-    ingredients: ['Hotdog', 'Gouda Cheese', 'Black Olives', 'Garlic Cream', 'Egg', 'Dough'],
+    "id": "20",
+    "name": "Fatayer Mayo Hot Dog",
+    "description": "Hotdog in zacht deeg met kaas, olijven en romige knoflooksaus.",
+    "price": 2.5,
+    "category": "Fatayer",
+    "imageUrl": "https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg",
+    "isVegetarian": false,
+    "isSpicy": false,
+    "ingredients": [
+      "Hotdog",
+      "Goudse kaas",
+      "Zwarte olijven",
+      "Knoflooksaus",
+      "Ei",
+      "Deeg"
+    ]
   },
   {
-    id: '21',
-    name: 'Feesten Hapjes (Mini Fatayer)',
-    description: 'Mini-size fatayers, perfect for parties and events.',
-    price: 0.65,
-    category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
-    isVegetarian: false,
-    isSpicy: false,
-    ingredients: ['Mixed Fillings', 'Dough'],
+    "id": "21",
+    "name": "Feesten Hapjes (Mini Fatayer)",
+    "description": "Mini-fatayers – perfect voor feestjes en borrels.",
+    "price": 2.5,
+    "category": "Fatayer",
+    "imageUrl": "https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg",
+    "isVegetarian": false,
+    "isSpicy": false,
+    "ingredients": [
+      "Gemengde vulling",
+      "Deeg"
+    ]
   },
   {
-    id: '22',
-    name: 'Fatayer Kip Hot Dog',
-    description: 'Soft dough encasing chicken hotdog with light seasoning.',
-    price: 2.5,
-    category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
-    isVegetarian: false,
-    isSpicy: false,
-    ingredients: ['Chicken Hotdog', 'Dough'],
+    "id": "22",
+    "name": "Fatayer Kip Hot Dog",
+    "description": "Kip hotdog in zacht gebakken deeg – eenvoudig en smakelijk.",
+    "price": 0.65,
+    "category": "Fatayer",
+    "imageUrl": "https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg",
+    "isVegetarian": false,
+    "isSpicy": false,
+    "ingredients": [
+      "Kip hotdog",
+      "Deeg"
+    ]
   },
   {
-    id: '23',
-    name: 'Fatayer Pastrami Kaas',
-    description: 'Delicious pastrami layered with cheese and baked inside dough.',
-    price: 2.5,
-    category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
-    isVegetarian: false,
-    isSpicy: false,
-    ingredients: ['Pastrami', 'Cheese', 'Dough'],
+    "id": "23",
+    "name": "Fatayer Pastrami Kaas",
+    "description": "Pastrami met kaas, versgebakken in een zacht deeg – klassiek en hartig.",
+    "price": 2.5,
+    "category": "Fatayer",
+    "imageUrl": "https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg",
+    "isVegetarian": false,
+    "isSpicy": false,
+    "ingredients": [
+      "Pastrami",
+      "Kaas",
+      "Deeg"
+    ]
   },
   {
-    id: '24',
-    name: 'Fatayer Gedroogde Paprika',
-    description: 'Oven-roasted bell pepper pie, naturally sweet and savory.',
-    price: 1.9,
-    category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
-    isVegetarian: true,
-    isSpicy: false,
-    ingredients: ['Dried Paprika', 'Dough'],
+    "id": "24",
+    "name": "Fatayer Gedroogde Paprika",
+    "description": "Gebakken paprika’s in deeg – zachtzoet en puur van smaak.",
+    "price": 2.5,
+    "category": "Fatayer",
+    "imageUrl": "https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg",
+    "isVegetarian": true,
+    "isSpicy": false,
+    "ingredients": [
+      "Gedroogde paprika",
+      "Deeg"
+    ]
   },
   {
-    id: '25',
-    name: 'Fatayer Gedroogde Paprika met Kaas',
-    description: 'A combination of smoky bell peppers and melted cheese.',
-    price: 1.9,
-    category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
-    isVegetarian: true,
-    isSpicy: false,
-    ingredients: ['Dried Paprika', 'Cheese', 'Dough'],
+    "id": "25",
+    "name": "Fatayer Gedroogde Paprika met Kaas",
+    "description": "Paprika gecombineerd met gesmolten kaas in een knapperig jasje.",
+    "price": 0.65,
+    "category": "Fatayer",
+    "imageUrl": "https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg",
+    "isVegetarian": true,
+    "isSpicy": false,
+    "ingredients": [
+      "Gedroogde paprika",
+      "Kaas",
+      "Deeg"
+    ]
   },
   {
-    id: '26',
-    name: "Fatayer Gedroogde Paprika met Zaa'tar",
-    description: "Savory pastry of paprika and za'atar herbs – a flavorful combo.",
-    price: 1.9,
-    category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
-    isVegetarian: true,
-    isSpicy: false,
-    ingredients: ['Dried Paprika', "Za'atar", 'Dough'],
+    "id": "26",
+    "name": "Fatayer Gedroogde Paprika met Za'atar",
+    "description": "Paprika en za’atar samen in een smaakvol gebakken deeg.",
+    "price": 0.65,
+    "category": "Fatayer",
+    "imageUrl": "https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg",
+    "isVegetarian": true,
+    "isSpicy": false,
+    "ingredients": [
+      "Gedroogde paprika",
+      "Za’atar",
+      "Deeg"
+    ]
   },
   {
-    id: '27',
-    name: 'Fatayer Kip Fillet',
-    description: 'Juicy chicken fillet baked in fresh dough.',
-    price: 3.0,
-    category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
-    isVegetarian: false,
-    isSpicy: false,
-    ingredients: ['Chicken Fillet', 'Dough'],
+    "id": "27",
+    "name": "Fatayer Kipfilet",
+    "description": "Gegrilde kipfilet in ambachtelijk gebakken deeg – sappig en stevig.",
+    "price": 3.0,
+    "category": "Fatayer",
+    "imageUrl": "https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg",
+    "isVegetarian": false,
+    "isSpicy": false,
+    "ingredients": [
+      "Kipfilet",
+      "Deeg"
+    ]
   },
   {
-    id: '28',
-    name: 'Fatayer Kip Fillet met Kaas',
-    description: 'Savory chicken fillet paired with cheese in a golden pastry.',
-    price: 3.5,
-    category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
-    isVegetarian: false,
-    isSpicy: false,
-    ingredients: ['Chicken Fillet', 'Cheese', 'Dough'],
-  },
+    "id": "28",
+    "name": "Fatayer Kipfilet met Kaas",
+    "description": "Kipfilet met kaas in goudbruin gebakken deeg – rijk en hartig.",
+    "price": 3.5,
+    "category": "Fatayer",
+    "imageUrl": "https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg",
+    "isVegetarian": false,
+    "isSpicy": false,
+    "ingredients": [
+      "Kipfilet",
+      "Kaas",
+      "Deeg"
+    ]
+  }
 ];

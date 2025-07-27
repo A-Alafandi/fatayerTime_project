@@ -67,15 +67,13 @@ function ItemDetailsModal({ item, onClose }) {
               </div>
               <div className="col-md-7">
                 <div className="modal-info">
+
                   <div className="mb-3">
-                    <strong>Category:</strong> {item.category || '-'}
-                  </div>
-                  <div className="mb-3">
-                    <strong>Description:</strong> {item.description || '-'}
+                    {item.description || '-'}
                   </div>
                   {ingredientsDisplay && (
                       <div className="mb-3">
-                        <strong>Ingredients:</strong> {ingredientsDisplay}
+                        <strong>Ingrediënten:</strong><br/> {ingredientsDisplay}
                       </div>
                   )}
                   <div className="mb-3">

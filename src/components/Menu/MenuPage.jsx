@@ -47,7 +47,6 @@ function MenuPage() {
           <h2>Menu</h2>
           <p>Check Our Tasty Menu</p>
         </div>
-
         <div
           className="container isotope-layout"
           data-default-filter="*"
