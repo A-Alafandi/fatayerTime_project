@@ -1,70 +1,135 @@
-# Getting Started with Create React App
+# 🥙 Fatayer Time
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to **Fatayer Time** — a modern, responsive, and SEO-friendly website for a Middle Eastern restaurant, built with **React**, **Bootstrap**, and **AOS animations**.
 
-## Available Scripts
+![Fatayer Time](public/favicon/logo.svg)
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🚀 Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- 📱 Responsive layout for mobile, tablet, and desktop
+- 🎨 Modern design using Bootstrap and custom styles
+- 🍽️ Interactive menu with detailed item modals
+- 🖼️ Gallery with Lightbox for viewing images
+- 📍 Embedded Google Maps location
+- 📬 Contact form (can be integrated with Web3Forms or Formspree)
+- 🌐 Scroll-to-top button, smooth scroll, and animations
+- 🔧 Admin panel (under development for content management)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🧪 Tech Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Frontend:** React 18, React Router DOM, Bootstrap 5, AOS, Swiper.js
+- **Animations:** AOS (Animate on Scroll)
+- **Icons:** Bootstrap Icons
+- **Image Optimization:** `.webp` format for fast loading
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 📂 Project Structure
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```plaintext
+FatayerTime/
+├── public/
+│   ├── favicon/          # Favicon & logo assets
+│   └── index.html        # Main HTML template
+├── src/
+│   ├── assets/           # Images and background files
+│   ├── components/       # All React components
+│   │   ├── Menu/         # MenuPage, MenuCard, ItemDetailsModal
+│   │   └── spinner/      # Loading spinner
+│   ├── App.js            # Main app logic and routing
+│   ├── index.js          # Entry point
+│   └── main.css          # Global styles
+├── .gitignore
+├── eslint.config.js
+├── package.json
+├── README.md
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 🛠️ Installation & Development
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. **Clone the repo**
+   ```bash
+   git clone https://github.com/A-Alafandi/project1.git
+   cd project1
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. **Run the app**
+   ```bash
+   npm start
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+4. **Lint & Format**
+   ```bash
+   npm run lint        # Check for code issues
+   npm run lint:fix    # Auto-fix common problems
+   npm run format      # Prettier formatting
+   ```
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🌐 Environment Variables (Optional)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+You can add a `.env` file for environment-specific settings like a contact form endpoint, API keys, etc.
 
-### Code Splitting
+```env
+REACT_APP_API_URL=https://your-api-url.com
+REACT_APP_CONTACT_FORM_ENDPOINT=https://formspree.io/f/example
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## 🧼 Linting & Code Quality
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- ESLint configured with:
+    - `eslint-plugin-react`
+    - `eslint-config-prettier`
+    - `eslint-plugin-jsx-a11y`
+- Prettier ensures consistent formatting
+- Run checks manually with `npm run lint` or auto-fix using `npm run lint:fix`
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 📦 Deployment
 
-### Advanced Configuration
+You can deploy the project easily on platforms like:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- **Vercel** 🔥
+- **Netlify**
+- **GitHub Pages**
+- Or your own VPS (e.g., using Nginx)
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 📷 Image Optimization Tip
 
-### `npm run build` fails to minify
+Use `.webp` format for images in `src/assets/img/` for faster loading. Tools like [Squoosh](https://squoosh.app/) or TinyPNG can help convert JPEG/PNG to WebP.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+
+## 🙋 Contact
+
+Have suggestions or want to contribute?
+
+📧 **Abdulrazak Alafandi**  
+GitHub: [@A-Alafandi](https://github.com/A-Alafandi)
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License**.
+
+---
+
+> Made with ❤️ for Fatayer lovers!
