@@ -7,20 +7,20 @@ import './main.css';
 import AOS from 'aos';
 
 // Lazy load components with better chunk names
-const HomePage = lazy(() =>
-    import(/* webpackChunkName: "home-page" */ './components/HomePage.jsx')
+const HomePage = lazy(
+  () => import(/* webpackChunkName: "home-page" */ './components/HomePage.jsx')
 );
-const NotFound = lazy(() =>
-    import(/* webpackChunkName: "not-found" */ './components/NotFound.jsx')
+const NotFound = lazy(
+  () => import(/* webpackChunkName: "not-found" */ './components/NotFound.jsx')
 );
 
 // Memoized error fallback component
 const ErrorFallback = memo(({ error, resetErrorBoundary }) => (
-    <div role="alert" className="error-boundary">
-      <h1>Something went wrong:</h1>
-      <pre style={{ color: 'red' }}>{error.message}</pre>
-      <button onClick={resetErrorBoundary}>Try again</button>
-    </div>
+  <div role="alert" className="error-boundary">
+    <h1>Something went wrong:</h1>
+    <pre style={{ color: 'red' }}>{error.message}</pre>
+    <button onClick={resetErrorBoundary}>Try again</button>
+  </div>
 ));
 
 ErrorFallback.displayName = 'ErrorFallback';
@@ -28,9 +28,9 @@ ErrorFallback.displayName = 'ErrorFallback';
 // Add PropTypes validation
 ErrorFallback.propTypes = {
   error: PropTypes.shape({
-    message: PropTypes.string.isRequired
+    message: PropTypes.string.isRequired,
   }).isRequired,
-  resetErrorBoundary: PropTypes.func.isRequired
+  resetErrorBoundary: PropTypes.func.isRequired,
 };
 
 // Memoized loading component
@@ -69,18 +69,18 @@ function App() {
   };
 
   return (
-      <ErrorBoundary
-          FallbackComponent={ErrorFallback}
-          onError={handleError}
-          onReset={() => window.location.reload()}
-      >
-        <Suspense fallback={<LoadingFallback />}>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Suspense>
-      </ErrorBoundary>
+    <ErrorBoundary
+      FallbackComponent={ErrorFallback}
+      onError={handleError}
+      onReset={() => window.location.reload()}
+    >
+      <Suspense fallback={<LoadingFallback />}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Suspense>
+    </ErrorBoundary>
   );
 }
 

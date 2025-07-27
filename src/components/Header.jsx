@@ -27,7 +27,6 @@ const Header = () => {
     }
   }, [navOpen]);
 
-
   // Custom smooth scroll function for better control
   const handleSmoothScroll = (target) => {
     const element = document.getElementById(target);
@@ -45,10 +44,7 @@ const Header = () => {
 
   return (
     <header id="header" className={`header fixed-top ${isScrolled ? 'scrolled' : ''}`}>
-      <div className="branding d-flex align-items-center"
-           data-aos="fade-down"
-           data-aos-delay="200"
-      >
+      <div className="branding d-flex align-items-center" data-aos="fade-down" data-aos-delay="200">
         <div className="container position-relative d-flex align-items-center justify-content-between">
           <RouterLink to="/" className="logo d-flex align-items-center me-auto me-xl-0">
             <img src={logo || '/placeholder.svg'} alt="Fatayer Time Logo" />
@@ -57,9 +53,10 @@ const Header = () => {
 
           {/* Fixed: Add mobile-nav-active class conditionally to navmenu */}
           <nav id="navmenu" className={`navmenu ${navOpen ? 'mobile-nav-active' : ''}`}>
-            <ul className="h-100 items-center center
-            ">
-
+            <ul
+              className="h-100 items-center center
+            "
+            >
               <li className="flex items-center content-center">
                 <button
                   onClick={() => handleSmoothScroll('hero')}
@@ -114,7 +111,6 @@ const Header = () => {
                   Contact
                 </button>
               </li>
-
             </ul>
           </nav>
 

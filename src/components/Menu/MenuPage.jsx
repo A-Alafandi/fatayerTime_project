@@ -18,14 +18,14 @@ function MenuPage() {
       badges.push(
         <span key="veg" className="menu-badge badge-veg">
           🥗 Vegetarian
-        </span>,
+        </span>
       );
     }
     if (item.isSpicy) {
       badges.push(
         <span key="spicy" className="menu-badge badge-spicy">
           🌶️ Spicy
-        </span>,
+        </span>
       );
     }
     return badges;

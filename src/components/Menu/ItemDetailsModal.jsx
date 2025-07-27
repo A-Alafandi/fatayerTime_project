@@ -18,9 +18,9 @@ function ItemDetailsModal({ item, onClose }) {
   if (!item) return null;
 
   const ingredientsDisplay =
-      Array.isArray(item.ingredients) && item.ingredients.length > 0
-          ? item.ingredients.join(', ')
-          : null;
+    Array.isArray(item.ingredients) && item.ingredients.length > 0
+      ? item.ingredients.join(', ')
+      : null;
 
   const handleBackdropClick = (e) => {
     if (e.target === e.currentTarget) onClose();
@@ -34,63 +34,56 @@ function ItemDetailsModal({ item, onClose }) {
   };
 
   return (
-      <div
-          className="menu-modal-backdrop"
-          onClick={handleBackdropClick}
-          onKeyDown={handleBackdropKeyDown}
-          tabIndex={0}
-          role="button"
-          aria-label="Close modal by clicking backdrop"
-      >
-        <div
-            className="menu-modal"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="modal-title"
-        >
-          <div className="modal-header d-flex justify-content-between align-items-center">
-            <h2 id="modal-title" className="modal-title">
-              {item.name}
-            </h2>
-            <button type="button" className="btn-close" aria-label="Close" onClick={onClose}>
-              ×
-            </button>
-          </div>
-          <div className="modal-body">
-            <div className="row">
-              <div className="col-md-5 d-flex align-items-center justify-content-center mb-3 mb-md-0">
-                <img
-                    src={item.imageUrl || '/placeholder.svg?height=200&width=200'}
-                    alt={item.name}
-                    className="modal-image"
-                />
-              </div>
-              <div className="col-md-7">
-                <div className="modal-info">
-
+    <div
+      className="menu-modal-backdrop"
+      onClick={handleBackdropClick}
+      onKeyDown={handleBackdropKeyDown}
+      tabIndex={0}
+      role="button"
+      aria-label="Close modal by clicking backdrop"
+    >
+      <div className="menu-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div className="modal-header d-flex justify-content-between align-items-center">
+          <h2 id="modal-title" className="modal-title">
+            {item.name}
+          </h2>
+          <button type="button" className="btn-close" aria-label="Close" onClick={onClose}>
+            ×
+          </button>
+        </div>
+        <div className="modal-body">
+          <div className="row">
+            <div className="col-md-5 d-flex align-items-center justify-content-center mb-3 mb-md-0">
+              <img
+                src={item.imageUrl || '/placeholder.svg?height=200&width=200'}
+                alt={item.name}
+                className="modal-image"
+              />
+            </div>
+            <div className="col-md-7">
+              <div className="modal-info">
+                <div className="mb-3">{item.description || '-'}</div>
+                {ingredientsDisplay && (
                   <div className="mb-3">
-                    {item.description || '-'}
+                    <strong>Ingrediënten:</strong>
+                    <br /> {ingredientsDisplay}
                   </div>
-                  {ingredientsDisplay && (
-                      <div className="mb-3">
-                        <strong>Ingrediënten:</strong><br/> {ingredientsDisplay}
-                      </div>
-                  )}
-                  <div className="mb-3">
-                    <div className="modal-price">
-                      €{typeof item.price === 'number' ? item.price.toFixed(2) : '-'}
-                    </div>
+                )}
+                <div className="mb-3">
+                  <div className="modal-price">
+                    €{typeof item.price === 'number' ? item.price.toFixed(2) : '-'}
                   </div>
-                  <div className="d-flex gap-2">
-                    {item.isVegetarian && <span className="badge bg-success">🥗 Vegetarian</span>}
-                    {item.isSpicy && <span className="badge bg-danger">🌶️ Spicy</span>}
-                  </div>
+                </div>
+                <div className="d-flex gap-2">
+                  {item.isVegetarian && <span className="badge bg-success">🥗 Vegetarian</span>}
+                  {item.isSpicy && <span className="badge bg-danger">🌶️ Spicy</span>}
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
   );
 }
 
