@@ -63,9 +63,6 @@ function App() {
   const handleError = (error, errorInfo) => {
     console.error('Application Error:', error);
     console.error('Error Info:', errorInfo);
-
-    // You can send error reports to a service like Sentry here
-    // Sentry.captureException(error, { contexts: { errorInfo } });
   };
 
   return (

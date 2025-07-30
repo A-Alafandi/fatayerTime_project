@@ -1,38 +1,56 @@
-import bannerImg from '../assets/img/fallback-food.jpg';
+import React, { useState } from 'react';
+import { FaPlay } from 'react-icons/fa';
 import '../main.css';
+import Img from "../assets/img/fallback-food.jpg";
+import vid from "../assets/videos/video2.mp4";
 
 const Hero = () => {
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
+
+  const handlePlayClick = () => setIsVideoOpen(true);
+  const closeVideo = () => setIsVideoOpen(false);
+
   return (
-    <section id="hero" className="hero section light-background">
-      {/* Background Image */}
-      <img src={bannerImg} alt="Fatayer Time Banner" data-aos="fade-in" />
+    <>
+      <section className="hero section dark-background" id="hero">
+        <img src={Img} alt="Hero Background" />
 
-      {/* Hero Content */}
-      <div className="container" data-aos="zoom-in" data-aos-delay="100">
-        <h2>
-          Welkom bij <span>Fatayer Time</span>
-        </h2>
-        <p>Authentieke Syrische Fatayer & Specialiteiten in Den Haag</p>
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-8 d-flex flex-column align-items-center align-items-lg-start">
+              <h2><span>Baked Fresh. Served Fast. Loved Always.</span></h2>
+              <p>فطاير_تايم_ببساطة_اختصاص#</p>
+              <div className="d-flex mt-4">
+                <a href="#menu" className="cta-btn">Our Menu</a>
+                <a href="https://www.bistroo.nl/voorburg/restaurants/fatayer-time?utm_source=fatayer-time&utm_medium=bestelknop" className="cta-btn">Online Bestellen</a>
+              </div>
+            </div>
 
-        <div
-          className="d-flex justify-content-left mt-4 items-reverse"
-          data-aos="fade-up"
-          data-aos-delay="300"
-        >
-          <a
-            href="https://www.bistroo.nl/voorburg/restaurants/fatayer-time?utm_source=fatayer-time&utm_medium=bestelknop"
-            className="cta-btn"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Online Bestellen
-          </a>
-          <a href="#contact" className="cta-btn">
-            Afhalen
-          </a>
+            <div className="col-lg-4 d-flex align-items-center justify-content-center mt-5 mt-lg-0">
+              <button
+                className="pulsating-play-btn"
+                onClick={handlePlayClick}
+                aria-label="Play video"
+              >
+                <FaPlay />
+              </button>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {isVideoOpen && (
+        <div className="video-overlay" onClick={closeVideo}>
+          <div className="video-container" onClick={(e) => e.stopPropagation()}>
+            <video controls autoPlay>
+              <source src={vid} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <button className="close-btn" onClick={closeVideo}>×</button>
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 
