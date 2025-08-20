@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import Header from './Header';
 import Hero from './Hero';
 import About from './About';
@@ -7,10 +8,34 @@ import Testimonials from './Testimonials';
 import Contact from './Contact';
 import Footer from './Footer';
 import ScrollTopButton from './ScrollTopButton';
-import '../main.css';
+import Spinner from './spinner/Spinner';
 import MenuPage from './Menu/MenuPage';
 
 function HomePage() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading delay (you can tie this to actual data fetch)
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return (
+      <div style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100vh'
+      }}>
+        <Spinner />
+      </div>
+    );
+  }
+
   return (
     <div>
       <Header />

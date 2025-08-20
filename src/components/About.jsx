@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import '../main.css';
 import fatayerImg from '../assets/img/fatayer.png';
 import AOS from 'aos';
 import 'aos/dist/aos.css';

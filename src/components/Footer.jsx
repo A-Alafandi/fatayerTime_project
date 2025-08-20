@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import '../main.css';
-import FandiCodeLogo from '../assets/img/FandiCode.png'; // ✅ fix import path
+
 
 function Footer() {
   const handleSmoothScroll = (e, id) => {

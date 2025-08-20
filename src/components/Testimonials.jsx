@@ -3,7 +3,6 @@ import { Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import '../main.css';
 
 import img1 from '../../src/assets/img/testimonials/testimonials-1.jpg';
 import img2 from '../../src/assets/img/testimonials/testimonials-2.jpg';

@@ -1,6 +1,4 @@
 import React from 'react';
-import '../main.css';
-
 const hours = [
   { day: 'Monday', open: '10:00', close: '20:00' },
   { day: 'Tuesday', open: '10:00', close: '20:00' },

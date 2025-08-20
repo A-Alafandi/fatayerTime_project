@@ -2,7 +2,6 @@
 
 import { useEffect, useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import '../main.css';
 
 const Notification = ({
   message,

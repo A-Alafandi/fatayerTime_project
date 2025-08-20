@@ -1,5 +1,3 @@
-import '../main.css';
-
 const whyUs = [
   {
     number: '01',
