@@ -1,57 +1,52 @@
-import { useEffect, useState } from 'react';
-import Header from './Header';
-import Hero from './Hero';
-import About from './About';
-import Services from './Services';
-import Gallery from './Gallery';
-import Testimonials from './Testimonials';
-import Contact from './Contact';
-import Footer from './Footer';
-import ScrollTopButton from './ScrollTopButton';
-import Spinner from './spinner/Spinner';
-import MenuPage from './Menu/MenuPage';
+import { useEffect } from "react"
+import AOS from "aos"
+import "aos/dist/aos.css"
 
-function HomePage() {
-  const [loading, setLoading] = useState(true);
+import Header from "./Header"
+import Hero from "./Hero"
+import About from "./About"
+import Services from "./Services"
+import MenuPage from "./Menu/MenuPage"
+import Gallery from "./Gallery"
+import Testimonials from "./Testimonials"
+import Contact from "./Contact"
+import Footer from "./Footer"
+import ScrollTopButton from "./ScrollTopButton"
 
+const HomePage = () => {
   useEffect(() => {
-    // Simulate loading delay (you can tie this to actual data fetch)
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 1000);
+    // Initialize AOS
+    AOS.init({
+      duration: 1000,
+      easing: "ease-in-out",
+      once: true,
+      mirror: false,
+    })
 
-    return () => clearTimeout(timer);
-  }, []);
+    // Refresh AOS on route change
+    AOS.refresh()
 
-  if (loading) {
-    return (
-      <div style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '100vh'
-      }}>
-        <Spinner />
-      </div>
-    );
-  }
+    return () => {
+      AOS.refresh()
+    }
+  }, [])
 
   return (
-    <div>
+    <div className="homepage">
       <Header />
-      <Hero />
       <main>
-        <About data-aos="fade-up" />
-        <MenuPage data-aos="fade-up" />
-        <Services data-aos="fade-up" />
-        <Gallery data-aos="fade-up" />
-        <Testimonials data-aos="fade-up" />
-        <Contact data-aos="fade-up" />
+        <Hero />
+        <About />
+        <Services />
+        <MenuPage />
+        <Gallery />
+        <Testimonials />
+        <Contact />
       </main>
       <Footer />
       <ScrollTopButton />
     </div>
-  );
+  )
 }
 
-export default HomePage;
+export default HomePage

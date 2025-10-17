@@ -1,131 +1,105 @@
-import { useEffect, useState } from 'react';
-import { Link as RouterLink } from 'react-router-dom';
-import logo from '../assets/img/logo.svg';
+import { useEffect, useState } from "react"
+import { Link as RouterLink } from "react-router-dom"
+import ThemeToggle from "./ThemeToggle"
+
+import LogoSvg from "../assets/img/logo.png"
 
 const Header = () => {
-  const [navOpen, setNavOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [navOpen, setNavOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
 
   const toggleNav = () => {
-    setNavOpen((prev) => !prev);
-  };
+    setNavOpen((prev) => !prev)
+  }
 
   const handleScroll = () => {
-    setIsScrolled(window.scrollY > 30);
-  };
+    const scrollTop = window.scrollY
+    setIsScrolled(scrollTop > 50)
+  }
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   useEffect(() => {
     if (navOpen) {
-      document.body.classList.add('mobile-nav-active');
+      document.body.classList.add("mobile-nav-active")
     } else {
-      document.body.classList.remove('mobile-nav-active');
+      document.body.classList.remove("mobile-nav-active")
     }
-  }, [navOpen]);
+  }, [navOpen])
 
-  // Custom smooth scroll function for better control
   const handleSmoothScroll = (target) => {
-    const element = document.getElementById(target);
+    const element = document.getElementById(target)
     if (element) {
-      const yOffset = -80;
-      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-
+      const headerHeight = 80
+      const yOffset = -headerHeight
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset
       window.scrollTo({
         top: y,
-        behavior: 'smooth',
-      });
+        behavior: "smooth",
+      })
     }
-    setNavOpen(false);
-  };
+    setNavOpen(false)
+  }
 
   return (
-    <header id="header" className={`header fixed-top ${isScrolled ? 'scrolled' : ''}`}>
-      <div className="branding d-flex align-items-center" data-aos="fade-down" data-aos-delay="200">
-        <div className="container position-relative d-flex align-items-center justify-content-between">
-          <RouterLink to="/" className="logo d-flex align-items-center me-auto me-xl-0">
-            <img src={logo || '/placeholder.svg'} alt="Fatayer Time Logo" />
-            <h1 className="sitename">Fatayer Time</h1>
-          </RouterLink>
+    <header id="header" className={`header d-flex align-items-center fixed-top ${isScrolled ? "header-scrolled" : ""}`}>
+      <div className="container position-relative d-flex align-items-center justify-content-between">
+        <RouterLink to="/" className="logo d-flex align-items-center me-auto me-xl-0">
+          <img src={LogoSvg || "/placeholder.svg"} alt="Fatayer Time Logo" />
 
-          {/* Fixed: Add mobile-nav-active class conditionally to navmenu */}
-          <nav id="navmenu" className={`navmenu ${navOpen ? 'mobile-nav-active' : ''}`}>
-            <ul
-              className="h-100 items-center center
-            "
-            >
-              <li className="flex items-center content-center">
-                <button
-                  onClick={() => handleSmoothScroll('hero')}
-                  className="nav-link"
-                  style={{ flexDirection: 'column-reverse', alignItems: 'center' }}
-                >
-                  Home
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => handleSmoothScroll('about')}
-                  className="nav-link"
-                  style={{ flexDirection: 'column-reverse', alignItems: 'center' }}
-                >
-                  About
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => handleSmoothScroll('why-us')}
-                  className="nav-link"
-                  style={{ flexDirection: 'column-reverse', alignItems: 'center' }}
-                >
-                  Services
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => handleSmoothScroll('menu')}
-                  className="nav-link"
-                  style={{ flexDirection: 'column-reverse', alignItems: 'center' }}
-                >
-                  Menu
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => handleSmoothScroll('gallery')}
-                  className="nav-link"
-                  style={{ flexDirection: 'column-reverse', alignItems: 'center' }}
-                >
-                  Gallery
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => handleSmoothScroll('contact')}
-                  className="nav-link"
-                  style={{ flexDirection: 'column-reverse', alignItems: 'center' }}
-                >
-                  Contact
-                </button>
-              </li>
-            </ul>
-          </nav>
+          <h1 className="sitename">Fatayer Time</h1>
+        </RouterLink>
 
-          {/* Fixed: Improved mobile toggle button */}
-          <button
-            className={`mobile-nav-toggle d-xl-none bi ${navOpen ? 'bi-x' : 'bi-list'}`}
-            onClick={toggleNav}
-            aria-label="Toggle navigation"
-            aria-expanded={navOpen}
-            type="button"
-          />
+        <nav id="navmenu" className={`navmenu ${navOpen ? "mobile-nav-active" : ""}`}>
+          <ul>
+            <li>
+              <button onClick={() => handleSmoothScroll('hero')} className="nav-link">
+                Home
+              </button>
+            </li>
+            <li>
+              <button onClick={() => handleSmoothScroll('about')} className="nav-link">
+                About
+              </button>
+            </li>
+            <li>
+              <button onClick={() => handleSmoothScroll('services')} className="nav-link">
+                Services
+              </button>
+            </li>
+            <li>
+              <button onClick={() => handleSmoothScroll('menu')} className="nav-link">
+                Menu
+              </button>
+            </li>
+            <li>
+              <button onClick={() => handleSmoothScroll('gallery')} className="nav-link">
+                Gallery
+              </button>
+            </li>
+            <li>
+              <button onClick={() => handleSmoothScroll('contact')} className="nav-link">
+                Contact
+              </button>
+            </li>
+            <li className="d-xl-none">
+              <ThemeToggle />
+            </li>
+          </ul>
+        </nav>
+
+        <div className="d-flex align-items-center">
+
+          <button className="mobile-nav-toggle d-xl-none" onClick={toggleNav} aria-label="Toggle navigation">
+            <i className={navOpen ? "bi bi-x" : "bi bi-list"}></i>
+          </button>
         </div>
       </div>
     </header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

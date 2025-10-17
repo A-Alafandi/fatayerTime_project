@@ -1,41 +1,33 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react"
 
-function ScrollTopButton() {
-  const [visible, setVisible] = useState(false);
+const ScrollTopButton = () => {
+  const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
-    const toggleScrollTop = () => {
-      setVisible(window.scrollY > 100);
-    };
+    const toggleVisibility = () => {
+      setIsVisible(window.pageYOffset > 300)
+    }
 
-    window.addEventListener('scroll', toggleScrollTop);
-    window.addEventListener('load', toggleScrollTop);
+    window.addEventListener("scroll", toggleVisibility)
+    return () => window.removeEventListener("scroll", toggleVisibility)
+  }, [])
 
-    return () => {
-      window.removeEventListener('scroll', toggleScrollTop);
-      window.removeEventListener('load', toggleScrollTop);
-    };
-  }, []);
-
-  const scrollToTop = (e) => {
-    e.preventDefault();
+  const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth',
-    });
-  };
+      behavior: "smooth",
+    })
+  }
 
   return (
-    <a
-      href="/HomePage"
-      id="scroll-top"
-      className={`scroll-top d-flex align-items-center justify-content-center ${visible ? 'active' : ''}`}
+    <button
+      className={`scroll-top d-flex align-items-center justify-content-center ${isVisible ? "active" : ""}`}
       onClick={scrollToTop}
       aria-label="Scroll to top"
     >
       <i className="bi bi-arrow-up-short"></i>
-    </a>
-  );
+    </button>
+  )
 }
 
-export default ScrollTopButton;
+export default ScrollTopButton

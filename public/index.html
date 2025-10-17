@@ -2,23 +2,32 @@
 <html lang="nl">
 <head>
   <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon/favicon-32x32.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#cda45e" />
 
-  <!-- CRITICAL: Preload the actual hero image used in component -->
-  <link rel="preload" href="/src/assets/img/fallback-food.webp" as="image" type="image/webp">
+  <!-- Preconnect to font providers -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <!-- Preload critical fonts that are actually used -->
-  <link rel="preload" href="/fonts/Quicksand-Bold.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/Roboto-Regular.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/Poppins-Medium.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Preload critical fonts -->
+  <!-- Replacing fonts with elegant Playfair Display and Inter for professional restaurant aesthetic -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
-  <!-- Critical inline CSS for above-the-fold content -->
+  <!-- Fallback for browsers that don't support preload -->
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  </noscript>
+
   <style>
       /* SYSTEM FONT STACK AS FALLBACK */
       :root {
-          --default-font: 'Roboto', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-          --heading-font: 'Quicksand', sans-serif;
-          --nav-font: 'Poppins', sans-serif;
+          /* Updated font variables for elegant restaurant typography */
+          --default-font: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+          --heading-font: 'Playfair Display', Georgia, 'Times New Roman', serif;
+          --nav-font: 'Inter', sans-serif;
           --background-color: #0c0b09;
           --default-color: rgba(255, 255, 255, 0.7);
           --heading-color: #ffffff;
@@ -83,7 +92,8 @@
 
       /* Loading state */
       .fonts-loading .hero-heading {
-          font-family: system-ui, sans-serif;
+          /* Updated fallback font for new heading font */
+          font-family: Georgia, serif;
           font-weight: 600;
       }
 
@@ -128,53 +138,43 @@
       }
   </style>
 
-  <!-- DNS prefetch for external domains -->
-  <link rel="dns-prefetch" href="//fonts.gstatic.com">
-  <link rel="dns-prefetch" href="//maps.googleapis.com">
-  <link rel="dns-prefetch" href="//www.bistroo.nl">
+  <meta name="description" content="Fatayer Time - Authentieke Syrische catering, feesten en events in Den Haag en Voorburg. Verse fatayer, traditionele gerechten en professionele catering service." />
+  <meta name="keywords" content="Syrische catering, fatayer, Den Haag, Voorburg, Arabische catering, feesten, events, traditioneel eten" />
 
-  <!-- Preconnect to critical third-party origins -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://fatayertime.nl/" />
+  <meta property="og:title" content="Fatayer Time - Syrische Catering, Feesten & Events | Den Haag Voorburg" />
+  <meta property="og:description" content="Authentieke Syrische catering met verse fatayer en traditionele gerechten. Professionele service voor al uw feesten en events in Den Haag en omgeving." />
+  <meta property="og:image" content="%PUBLIC_URL%/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://fatayertime.nl/" />
+  <meta property="twitter:title" content="Fatayer Time - Syrische Catering, Feesten & Events" />
+  <meta property="twitter:description" content="Authentieke Syrische catering met verse fatayer en traditionele gerechten." />
+  <meta property="twitter:image" content="%PUBLIC_URL%/og-image.jpg" />
 
   <title>Fatayer Time - Syrische Catering, Feesten & Events | Den Haag Voorburg</title>
-  <meta name="description" content="Authentieke Syrische catering voor bedrijfsfeesten, verjaardagen, bruiloften & events. Fatayer, kebab, mezze. Bezorging Den Haag, Voorburg, Leidschendam. Bestel nu!" />
-
-  <!-- Load Google Fonts optimally -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-  <!-- Font loading optimization -->
-  <script>
-    document.documentElement.classList.add('fonts-loading');
-
-    if ('fonts' in document) {
-      Promise.all([
-        document.fonts.load('700 1em Quicksand'),
-        document.fonts.load('400 1em Roboto'),
-        document.fonts.load('500 1em Poppins')
-      ]).then(() => {
-        document.documentElement.classList.remove('fonts-loading');
-        document.documentElement.classList.add('fonts-loaded');
-      });
-    }
-  </script>
-
-  <!-- Rest of your existing meta tags... -->
-  <!-- Multi-language Support -->
-  <link rel="alternate" hreflang="nl" href="https://fatayertime.nl" />
-  <link rel="alternate" hreflang="en" href="https://fatayertime.nl/en" />
-  <link rel="alternate" hreflang="ar" href="https://fatayertime.nl/ar" />
-  <link rel="alternate" hreflang="x-default" href="https://fatayertime.nl" />
-
-  <meta name="theme-color" content="#cda45e" />
-  <link rel="canonical" href="https://fatayertime.nl" />
-
-  <!-- Your existing structured data and other meta tags... -->
 </head>
-
 <body>
 <noscript>Je moet JavaScript inschakelen om deze site te gebruiken.</noscript>
 <div id="root"></div>
+
+<script>
+  // Font loading optimization
+  document.documentElement.classList.add('fonts-loading');
+
+  if ('fonts' in document) {
+    Promise.all([
+      document.fonts.load('700 1em Playfair Display'),
+      document.fonts.load('400 1em Inter'),
+      document.fonts.load('500 1em Inter')
+    ]).then(() => {
+      document.documentElement.classList.remove('fonts-loading');
+      document.documentElement.classList.add('fonts-loaded');
+    });
+  }
+</script>
 </body>
 </html>

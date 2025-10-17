@@ -1,3 +1,61 @@
+import FatayerKaas from '../../assets/img/menu/Fatayer kaas.avif';
+import ManoshehZaatar from '../../assets/img/menu/Manosheh Zaa_tar.avif';
+import FatayerMuhammara from '../../assets/img/menu/Fatayer Muhamara.avif';
+import FatayerMuhammaraMetKaas from '../../assets/img/menu/Fatayer Muhamara met kaas.avif';
+import FatayerZaatarMetKaas from '../../assets/img/menu/Fatayer Zaa_tar met kaas.avif';
+import MiniPizza from '../../assets/img/menu/Mini pizza.avif';
+import FatayerWorstMetKaas from '../../assets/img/menu/Fatayer worst met kaas.avif';
+import FatayerGekruidGehakt from '../../assets/img/menu/Fatayer gekruiden gehakt.avif';
+import FatayerToshka from '../../assets/img/menu/Fatayer Toshka.avif';
+import FatayerOlijf from '../../assets/img/menu/Fatayer Olijf.avif';
+import FatayerSpinazie from '../../assets/img/menu/Fatayer Spinazie.avif';
+import FatayerKipCurryMetKaas from '../../assets/img/menu/Fatayer Kip Curry met kaas.avif';
+import FatayerPhiladelphia from '../../assets/img/menu/Fatayer Philadelphia.avif';
+// import SfehaGehakt from '../../assets/img/menu/Sfeha Gehakt.avif'; // Placeholder, add if available
+import MexicaanseTonijn from '../../assets/img/menu/Mexicaanse tonijn.avif';
+import FatayerMayoKaas from '../../assets/img/menu/Fatayer Mayo cheese.avif';
+import FatayerSteak from '../../assets/img/menu/Fatayer steak.avif';
+import Fatayer2SoortenKaasMetZwarteOlijf from '../../assets/img/menu/Fatayer 2 soorten kaas met zwarte olijf.avif';
+import FatayerMayoHotDog from '../../assets/img/menu/Fatayer Mayo Hot Dog.avif';
+import FeesthapjesMiniFatayer from '../../assets/img/menu/Feesthapjes (mini fatayer).avif';
+import FatayerKipHotDog from '../../assets/img/menu/Fatayer Kip Hot Dog.avif';
+import FatayerPastramiKaas from '../../assets/img/menu/Fatayer Pastrami Kaas.avif';
+import FatayerGedroogdePaprika from '../../assets/img/menu/Fatayer Gedroogde Paprika.avif';
+import FatayerGedroogdePaprikaMetKaas from '../../assets/img/menu/Fatayer Gedroogde Paprika met Kaas.avif';
+import FatayerGedroogdePaprikaMetZaatar from '../../assets/img/menu/Fatayer Gedroogde Paprika met Zaa_tar.avif';
+import FatayerKipfilet from '../../assets/img/menu/Fatayer Kipfilet.avif';
+import FatayerKipfiletMetKaas from '../../assets/img/menu/Fatayer Kipfilet met kaas.avif';
+
+const imageImports = {
+  "Fatayer kaas.avif": FatayerKaas,
+  "Manosheh Zaa_tar.avif": ManoshehZaatar,
+  "Fatayer Muhamara.avif": FatayerMuhammara,
+  "Fatayer Muhamara met kaas.avif": FatayerMuhammaraMetKaas,
+  "Fatayer Zaa_tar met kaas.avif": FatayerZaatarMetKaas,
+  "Mini pizza.avif": MiniPizza,
+  "Fatayer worst met kaas.avif": FatayerWorstMetKaas,
+  "Fatayer gekruiden gehakt.avif": FatayerGekruidGehakt,
+  "Fatayer Toshka.avif": FatayerToshka,
+  "Fatayer Olijf.avif": FatayerOlijf,
+  "Fatayer Spinazie.avif": FatayerSpinazie,
+  "Fatayer Kip Curry met kaas.avif": FatayerKipCurryMetKaas,
+  "Fatayer Philadelphia.avif": FatayerPhiladelphia,
+  // "Sfeha Gehakt.avif": SfehaGehakt, // Placeholder
+  "Mexicaanse tonijn.avif": MexicaanseTonijn,
+  "Fatayer Mayo cheese.avif": FatayerMayoKaas,
+  "Fatayer steak.avif": FatayerSteak,
+  "Fatayer 2 soorten kaas met zwarte olijf.avif": Fatayer2SoortenKaasMetZwarteOlijf,
+  "Fatayer Mayo Hot Dog.avif": FatayerMayoHotDog,
+  "Feesthapjes (mini fatayer).avif": FeesthapjesMiniFatayer,
+  "Fatayer Kip Hot Dog.avif": FatayerKipHotDog,
+  "Fatayer Pastrami Kaas.avif": FatayerPastramiKaas,
+  "Fatayer Gedroogde Paprika.avif": FatayerGedroogdePaprika,
+  "Fatayer Gedroogde Paprika met Kaas.avif": FatayerGedroogdePaprikaMetKaas,
+  "Fatayer Gedroogde Paprika met Zaa_tar.avif": FatayerGedroogdePaprikaMetZaatar,
+  "Fatayer Kipfilet.avif": FatayerKipfilet,
+  "Fatayer Kipfilet met kaas.avif": FatayerKipfiletMetKaas,
+};
+
 export const menu = [
   {
     id: '1',
@@ -6,8 +64,7 @@ export const menu = [
       'Traditioneel Syrisch gebakje gevuld met romige witte kaas, verse peterselie en zwarte sesam.',
     price: 1.9,
     category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
+    imageUrl: imageImports['Fatayer kaas.avif'], // Using Fatayer kaas as a fallback
     isVegetarian: true,
     isSpicy: false,
     ingredients: ['Syrische kaas', 'Peterselie', 'Ei', 'Zwarte sesam', 'Deeg'],
@@ -15,14 +72,13 @@ export const menu = [
   {
     id: '2',
     name: "Manosheh Za'atar",
-    description: 'Levantijns platbrood belegd met geurige za’atar en extra vergine olijfolie.',
+    description: "Levantijns platbrood belegd met geurige za'atar en extra vergine olijfolie.",
     price: 1.9,
     category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
+    imageUrl: imageImports['Manosheh Zaa_tar.avif'],
     isVegetarian: true,
     isSpicy: false,
-    ingredients: ['Za’atar (tijm)', 'Olijfolie', 'Deeg'],
+    ingredients: ["Za'atar (tijm)", 'Olijfolie', 'Deeg'],
   },
   {
     id: '3',
@@ -30,8 +86,7 @@ export const menu = [
     description: 'Hartig gebak gevuld met pittige rodepaprikapasta, uien en aromatische kruiden.',
     price: 1.9,
     category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
+    imageUrl: imageImports['Fatayer Muhamara.avif'],
     isVegetarian: true,
     isSpicy: true,
     ingredients: ['Tomaat', 'Rode paprika', 'Ui', 'Zwarte sesam', 'Specerijen', 'Deeg'],
@@ -42,8 +97,7 @@ export const menu = [
     description: 'Smaakvolle combinatie van muhammara en gesmolten kaas in vers gebakken deeg.',
     price: 1.9,
     category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
+    imageUrl: imageImports['Fatayer Muhamara met kaas.avif'],
     isVegetarian: true,
     isSpicy: true,
     ingredients: ['Muhammara', 'Kaas', 'Deeg'],
@@ -52,14 +106,13 @@ export const menu = [
     id: '5',
     name: "Fatayer Za'atar met Kaas",
     description:
-      'Ambachtelijk gebak met za’atar, olijfolie en romige kaas – een klassieker uit het Midden-Oosten.',
+      "Ambachtelijk gebak met za'atar, olijfolie en romige kaas – een klassieker uit het Midden-Oosten.",
     price: 1.9,
     category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
+    imageUrl: imageImports['Fatayer Zaa_tar met kaas.avif'],
     isVegetarian: true,
     isSpicy: false,
-    ingredients: ['Syrische kaas', 'Za’atar (tijm)', 'Olijfolie', 'Deeg'],
+    ingredients: ['Syrische kaas', "Za'atar (tijm)", 'Olijfolie', 'Deeg'],
   },
   {
     id: '6',
@@ -67,8 +120,7 @@ export const menu = [
     description: 'Traditioneel gebak met gesmolten mozzarella en goudse kaas – rijk en romig.',
     price: 2.5,
     category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
+    imageUrl: imageImports['Fatayer kaas.avif'],
     isVegetarian: true,
     isSpicy: false,
     ingredients: ['Goudse kaas', 'Mozzarella', 'Deeg'],
@@ -76,11 +128,10 @@ export const menu = [
   {
     id: '7',
     name: 'Mini Pizza',
-    description: 'Mini pizza’s met tomatensaus en kaas – ideaal als snack of bijgerecht.',
+    description: "Mini pizza's met tomatensaus en kaas – ideaal als snack of bijgerecht.",
     price: 2.5,
     category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
+    imageUrl: imageImports['Mini pizza.avif'],
     isVegetarian: true,
     isSpicy: false,
     ingredients: ['Kaas', 'Tomatensaus', 'Deeg'],
@@ -91,8 +142,7 @@ export const menu = [
     description: 'Zachte deeg gevuld met kipworst, muhammara en gesmolten kaas – hartig en pittig.',
     price: 2.5,
     category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
+    imageUrl: imageImports['Fatayer worst met kaas.avif'],
     isVegetarian: false,
     isSpicy: true,
     ingredients: ['Kipworst', 'Muhammara', 'Kaas', 'Deeg'],
@@ -103,8 +153,7 @@ export const menu = [
     description: 'Kruidige rundergehakt in knapperig deeg – vol van smaak.',
     price: 2.5,
     category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
+    imageUrl: imageImports['Fatayer gekruiden gehakt.avif'],
     isVegetarian: false,
     isSpicy: true,
     ingredients: ['Rundergehakt', 'Specerijen', 'Deeg'],
@@ -115,8 +164,7 @@ export const menu = [
     description: 'Vullende pastei met gekruid gehakt en gesmolten kaas – een stevige bite.',
     price: 2.5,
     category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
+    imageUrl: imageImports['Fatayer Toshka.avif'],
     isVegetarian: false,
     isSpicy: true,
     ingredients: ['Rundergehakt', 'Kaas', 'Specerijen', 'Deeg'],
@@ -127,8 +175,7 @@ export const menu = [
     description: 'Gebakje met groene olijven, lichte muhammara en een vleugje olijfolie.',
     price: 2.5,
     category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
+    imageUrl: imageImports['Fatayer Olijf.avif'],
     isVegetarian: true,
     isSpicy: false,
     ingredients: ['Groene olijven', 'Muhammara', 'Olijfolie', 'Deeg'],
@@ -139,8 +186,7 @@ export const menu = [
     description: 'Spinaziegebak met ui, walnoten en granaatappelsiroop – fris en gezond.',
     price: 2.5,
     category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
+    imageUrl: imageImports['Fatayer Spinazie.avif'],
     isVegetarian: true,
     isSpicy: false,
     ingredients: ['Spinazie', 'Ui', 'Walnoten', 'Granaatappelsiroop', 'Sumak', 'Deeg'],
@@ -151,8 +197,7 @@ export const menu = [
     description: 'Gebakken fatayer met kip in currysaus en romige kaas – heerlijk kruidig.',
     price: 2.5,
     category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
+    imageUrl: imageImports['Fatayer Kip Curry met kaas.avif'],
     isVegetarian: false,
     isSpicy: true,
     ingredients: ['Kip', 'Currykruiden', 'Kaas', 'Deeg'],
@@ -163,8 +208,7 @@ export const menu = [
     description: 'Luxe fatayer gevuld met kalfsvlees, groenten en kaas – een ware traktatie.',
     price: 4.0,
     category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
+    imageUrl: imageImports['Fatayer Philadelphia.avif'],
     isVegetarian: false,
     isSpicy: false,
     ingredients: ['Kalfsvlees', 'Paprika', 'Maïs', 'Champignons', 'Ui', 'Deeg'],
@@ -176,8 +220,7 @@ export const menu = [
       'Open fatayer met gekruid gehakt, tomaat en granaatappelsiroop – verkocht per kilo.',
     price: 0.65,
     category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
+    imageUrl: imageImports['Sfeha Gehakt.avif'], // Placeholder, add if available
     isVegetarian: false,
     isSpicy: true,
     ingredients: ['Gehakt', 'Tomaat', 'Granaatappelsiroop', 'Ui', 'Deeg'],
@@ -188,8 +231,7 @@ export const menu = [
     description: 'Pittige tonijn met groenten in Mexicaanse stijl – voor liefhebbers van scherp.',
     price: 4.0,
     category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
+    imageUrl: imageImports['Mexicaanse tonijn.avif'],
     isVegetarian: false,
     isSpicy: true,
     ingredients: ['Tonijn', 'Paprika', 'Maïs', 'Ui', 'Champignons', 'Deeg'],
@@ -200,8 +242,7 @@ export const menu = [
     description: 'Romige kaasfatayer met knoflooksaus en zwarte olijven – smeuïg en vol.',
     price: 2.5,
     category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
+    imageUrl: imageImports['Fatayer Mayo cheese.avif'],
     isVegetarian: true,
     isSpicy: false,
     ingredients: ['Goudse kaas', 'Zwarte olijven', 'Ei', 'Knoflooksaus', 'Deeg'],
@@ -212,8 +253,7 @@ export const menu = [
     description: 'Malse stukjes kalfsbiefstuk gewikkeld in vers gebakken deeg.',
     price: 4.0,
     category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
+    imageUrl: imageImports['Fatayer steak.avif'],
     isVegetarian: false,
     isSpicy: false,
     ingredients: ['Kalfsvlees', 'Deeg'],
@@ -224,8 +264,7 @@ export const menu = [
     description: 'Twee soorten kaas en zwarte olijven – perfect gebakken in licht deeg.',
     price: 0.65,
     category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
+    imageUrl: imageImports['Fatayer 2 soorten kaas met zwarte olijf.avif'],
     isVegetarian: true,
     isSpicy: false,
     ingredients: ['Smeerkaas', 'Goudse kaas', 'Zwarte olijven', 'Deeg'],
@@ -236,8 +275,7 @@ export const menu = [
     description: 'Hotdog in zacht deeg met kaas, olijven en romige knoflooksaus.',
     price: 2.5,
     category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
+    imageUrl: imageImports['Fatayer Mayo Hot Dog.avif'],
     isVegetarian: false,
     isSpicy: false,
     ingredients: ['Hotdog', 'Goudse kaas', 'Zwarte olijven', 'Knoflooksaus', 'Ei', 'Deeg'],
@@ -248,8 +286,7 @@ export const menu = [
     description: 'Mini-fatayers – perfect voor feestjes en borrels.',
     price: 2.5,
     category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
+    imageUrl: imageImports['Feesthapjes (mini fatayer).avif'],
     isVegetarian: false,
     isSpicy: false,
     ingredients: ['Gemengde vulling', 'Deeg'],
@@ -260,8 +297,7 @@ export const menu = [
     description: 'Kip hotdog in zacht gebakken deeg – eenvoudig en smakelijk.',
     price: 0.65,
     category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
+    imageUrl: imageImports['Fatayer Kip Hot Dog.avif'],
     isVegetarian: false,
     isSpicy: false,
     ingredients: ['Kip hotdog', 'Deeg'],
@@ -272,8 +308,7 @@ export const menu = [
     description: 'Pastrami met kaas, versgebakken in een zacht deeg – klassiek en hartig.',
     price: 2.5,
     category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
+    imageUrl: imageImports['Fatayer Pastrami Kaas.avif'],
     isVegetarian: false,
     isSpicy: false,
     ingredients: ['Pastrami', 'Kaas', 'Deeg'],
@@ -281,11 +316,10 @@ export const menu = [
   {
     id: '24',
     name: 'Fatayer Gedroogde Paprika',
-    description: 'Gebakken paprika’s in deeg – zachtzoet en puur van smaak.',
+    description: "Gebakken paprika's in deeg – zachtzoet en puur van smaak.",
     price: 2.5,
     category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
+    imageUrl: imageImports['Fatayer Gedroogde Paprika.avif'],
     isVegetarian: true,
     isSpicy: false,
     ingredients: ['Gedroogde paprika', 'Deeg'],
@@ -296,8 +330,7 @@ export const menu = [
     description: 'Paprika gecombineerd met gesmolten kaas in een knapperig jasje.',
     price: 0.65,
     category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
+    imageUrl: imageImports['Fatayer Gedroogde Paprika met Kaas.avif'],
     isVegetarian: true,
     isSpicy: false,
     ingredients: ['Gedroogde paprika', 'Kaas', 'Deeg'],
@@ -305,14 +338,13 @@ export const menu = [
   {
     id: '26',
     name: "Fatayer Gedroogde Paprika met Za'atar",
-    description: 'Paprika en za’atar samen in een smaakvol gebakken deeg.',
+    description: "Paprika en za'atar samen in een smaakvol gebakken deeg.",
     price: 0.65,
     category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
+    imageUrl: imageImports['Fatayer Gedroogde Paprika met Zaa_tar.avif'],
     isVegetarian: true,
     isSpicy: false,
-    ingredients: ['Gedroogde paprika', 'Za’atar', 'Deeg'],
+    ingredients: ['Gedroogde paprika', "Za'atar", 'Deeg'],
   },
   {
     id: '27',
@@ -320,8 +352,7 @@ export const menu = [
     description: 'Gegrilde kipfilet in ambachtelijk gebakken deeg – sappig en stevig.',
     price: 3.0,
     category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
+    imageUrl: imageImports['Fatayer Kipfilet.avif'],
     isVegetarian: false,
     isSpicy: false,
     ingredients: ['Kipfilet', 'Deeg'],
@@ -332,8 +363,7 @@ export const menu = [
     description: 'Kipfilet met kaas in goudbruin gebakken deeg – rijk en hartig.',
     price: 3.5,
     category: 'Fatayer',
-    imageUrl:
-      'https://www.shutterstock.com/image-photo/arabic-lebanese-cheese-pies-white-600nw-2538506267.jpg',
+    imageUrl: imageImports['Fatayer Kipfilet met kaas.avif'],
     isVegetarian: false,
     isSpicy: false,
     ingredients: ['Kipfilet', 'Kaas', 'Deeg'],

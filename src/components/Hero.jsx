@@ -1,49 +1,40 @@
-import React, { useState, useEffect, useCallback, memo } from 'react';
-import { FaPlay } from 'react-icons/fa';
+import { useState, useEffect, useCallback, memo } from "react"
+import { FaPlay } from "react-icons/fa"
 
 // Import hero image statically for better performance
-import HeroImg from '../assets/img/fallback-food.webp';
+import HeroImg from "../assets/img/fallback-food.webp"
 
 // Separate VideoModal component for better code organization
 const VideoModal = memo(({ isOpen, onClose, videoSrc }) => {
   // Handle escape key
   useEffect(() => {
-    if (!isOpen) return;
+    if (!isOpen) return
 
     const handleEscape = (e) => {
-      if (e.key === 'Escape') onClose();
-    };
+      if (e.key === "Escape") onClose()
+    }
 
-    document.addEventListener('keydown', handleEscape);
-    return () => document.removeEventListener('keydown', handleEscape);
-  }, [isOpen, onClose]);
+    document.addEventListener("keydown", handleEscape)
+    return () => document.removeEventListener("keydown", handleEscape)
+  }, [isOpen, onClose])
 
   // Prevent body scroll when modal is open
   useEffect(() => {
-    if (!isOpen) return;
+    if (!isOpen) return
 
-    const originalOverflow = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
+    const originalOverflow = document.body.style.overflow
+    document.body.style.overflow = "hidden"
 
     return () => {
-      document.body.style.overflow = originalOverflow;
-    };
-  }, [isOpen]);
+      document.body.style.overflow = originalOverflow
+    }
+  }, [isOpen])
 
-  if (!isOpen) return null;
+  if (!isOpen) return null
 
   return (
-    <div
-      className="video-overlay"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="video-title"
-      onClick={onClose}
-    >
-      <div
-        className="video-container"
-        onClick={(e) => e.stopPropagation()}
-      >
+    <div className="video-overlay" role="dialog" aria-modal="true" aria-labelledby="video-title" onClick={onClose}>
+      <div className="video-container" onClick={(e) => e.stopPropagation()}>
         <h2 id="video-title" className="sr-only">
           Fatayer Time Restaurant Video
         </h2>
@@ -56,47 +47,44 @@ const VideoModal = memo(({ isOpen, onClose, videoSrc }) => {
             preload="metadata"
             poster={HeroImg}
             style={{
-              width: '100%',
-              height: 'auto',
-              display: 'block',
-              borderRadius: '10px'
+              width: "100%",
+              height: "auto",
+              display: "block",
+              borderRadius: "10px",
             }}
             onError={(e) => {
-              console.error('Video failed to load:', e);
+              console.error("Video failed to load:", e)
               // Optionally show fallback content
             }}
           >
             <source src={videoSrc} type="video/mp4" />
             <p>
               Your browser doesn't support HTML5 video.
-              <a href={videoSrc} download>Download the video</a> instead.
+              <a href={videoSrc} download>
+                Download the video
+              </a>{" "}
+              instead.
             </p>
           </video>
         ) : (
           <div className="video-loading">Loading video...</div>
         )}
 
-        <button
-          type="button"
-          className="close-btn"
-          aria-label="Close video modal"
-          onClick={onClose}
-          autoFocus
-        >
+        <button type="button" className="close-btn" aria-label="Close video modal" onClick={onClose} autoFocus>
           ×
         </button>
       </div>
     </div>
-  );
-});
+  )
+})
 
-VideoModal.displayName = 'VideoModal';
+VideoModal.displayName = "VideoModal"
 
 // Separate PlayButton component
 const PlayButton = memo(({ onClick, disabled }) => (
   <button
     type="button"
-    className={`pulsating-play-btn ${disabled ? 'loading' : ''}`}
+    className={`pulsating-play-btn ${disabled ? "loading" : ""}`}
     onClick={onClick}
     disabled={disabled}
     aria-label="Play restaurant showcase video"
@@ -107,43 +95,43 @@ const PlayButton = memo(({ onClick, disabled }) => (
       Watch our restaurant showcase video to see our delicious Syrian cuisine
     </span>
   </button>
-));
+))
 
-PlayButton.displayName = 'PlayButton';
+PlayButton.displayName = "PlayButton"
 
 const Hero = () => {
-  const [isVideoOpen, setIsVideoOpen] = useState(false);
-  const [videoSrc, setVideoSrc] = useState(null);
-  const [isVideoLoading, setIsVideoLoading] = useState(false);
-  const [videoError, setVideoError] = useState(false);
+  const [isVideoOpen, setIsVideoOpen] = useState(false)
+  const [videoSrc, setVideoSrc] = useState(null)
+  const [isVideoLoading, setIsVideoLoading] = useState(false)
+  const [videoError, setVideoError] = useState(false)
 
   const handleVideoOpen = useCallback(async () => {
     if (isVideoLoading || videoSrc) {
-      setIsVideoOpen(true);
-      return;
+      setIsVideoOpen(true)
+      return
     }
 
-    setIsVideoLoading(true);
-    setVideoError(false);
+    setIsVideoLoading(true)
+    setVideoError(false)
 
     try {
       // Dynamic import with better error handling
-      const videoModule = await import('../assets/videos/video3.mp4');
-      setVideoSrc(videoModule.default);
-      setIsVideoOpen(true);
+      const videoModule = await import("../assets/videos/video3.mp4")
+      setVideoSrc(videoModule.default)
+      setIsVideoOpen(true)
     } catch (error) {
-      console.error('Failed to load video:', error);
-      setVideoError(true);
+      console.error("Failed to load video:", error)
+      setVideoError(true)
       // Optionally show error message to user
     } finally {
-      setIsVideoLoading(false);
+      setIsVideoLoading(false)
     }
-  }, [isVideoLoading, videoSrc]);
+  }, [isVideoLoading, videoSrc])
 
   const handleVideoClose = useCallback(() => {
-    setIsVideoOpen(false);
+    setIsVideoOpen(false)
     // Keep videoSrc in memory for better UX on reopening
-  }, []);
+  }, [])
 
   return (
     <>
@@ -154,11 +142,11 @@ const Hero = () => {
         */}
         <img
           className="hero-img"
-          src={HeroImg}
+          src={HeroImg || "/placeholder.svg"}
           alt="Delicious Syrian fatayer and Middle Eastern cuisine spread"
           loading="eager"
           decoding="async"
-          fetchPriority="high"
+          // fetchPriority="high"
           width="1920"
           height="auto"
         />
@@ -166,34 +154,16 @@ const Hero = () => {
         <div className="container">
           <div className="row">
             <div className="col-lg-8 d-flex flex-column align-items-center align-items-lg-start">
-              <h1
-                id="hero-heading"
-                className="hero-heading"
-                data-aos="fade-up"
-                data-aos-delay="100"
-              >
+              <h1 id="hero-heading" className="hero-heading">
                 <span>Baked Fresh. Served Fast. Loved Always.</span>
               </h1>
 
-              <p
-                className="hero-subtitle"
-                data-aos="fade-up"
-                data-aos-delay="150"
-              >
-                {/* FIXED: Proper Arabic text */}
+              <p className="hero-subtitle" data-aos="fade-up" data-aos-delay="50">
                 فطائر طايم ببساطة اختصاص
               </p>
 
-              <div
-                className="hero-cta d-flex mt-4"
-                data-aos="fade-down"
-                data-aos-delay="200"
-              >
-                <a
-                  href="#menu"
-                  className="cta-btn"
-                  aria-describedby="menu-description"
-                >
+              <div className="hero-cta d-flex mt-4" data-aos="fade-down" data-aos-delay="100">
+                <a href="#menu" className="cta-btn" aria-describedby="menu-description">
                   Our Menu
                 </a>
                 <span id="menu-description" className="sr-only">
@@ -222,22 +192,15 @@ const Hero = () => {
             </div>
 
             <div className="col-lg-4 d-flex align-items-center justify-content-center mt-5 mt-lg-0">
-              <PlayButton
-                onClick={handleVideoOpen}
-                disabled={isVideoLoading}
-              />
+              <PlayButton onClick={handleVideoOpen} disabled={isVideoLoading} />
             </div>
           </div>
         </div>
       </section>
 
-      <VideoModal
-        isOpen={isVideoOpen}
-        onClose={handleVideoClose}
-        videoSrc={videoSrc}
-      />
+      <VideoModal isOpen={isVideoOpen} onClose={handleVideoClose} videoSrc={videoSrc} />
     </>
-  );
-};
+  )
+}
 
-export default Hero;
+export default Hero

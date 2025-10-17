@@ -1,105 +1,86 @@
-import { useEffect } from 'react';
-import PropTypes from 'prop-types';
-import '../../main.css';
+"use client"
+
+import { useEffect } from "react"
+import PropTypes from "prop-types"
+import "../../main.css"
 
 function ItemDetailsModal({ item, onClose }) {
   useEffect(() => {
-    const onKeyDown = (e) => {
-      if (e.key === 'Escape') onClose();
-    };
-    document.addEventListener('keydown', onKeyDown);
-    document.body.style.overflow = 'hidden';
+    const handleEscape = (e) => {
+      if (e.key === "Escape") {
+        onClose()
+      }
+    }
+
+    document.addEventListener("keydown", handleEscape)
+    document.body.style.overflow = "hidden"
+
     return () => {
-      document.removeEventListener('keydown', onKeyDown);
-      document.body.style.overflow = 'unset';
-    };
-  }, [onClose]);
-
-  if (!item) return null;
-
-  const ingredientsDisplay =
-    Array.isArray(item.ingredients) && item.ingredients.length > 0
-      ? item.ingredients.join(', ')
-      : null;
+      document.removeEventListener("keydown", handleEscape)
+      document.body.style.overflow = "unset"
+    }
+  }, [onClose])
 
   const handleBackdropClick = (e) => {
-    if (e.target === e.currentTarget) onClose();
-  };
-
-  const handleBackdropKeyDown = (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      onClose();
+    if (e.target === e.currentTarget) {
+      onClose()
     }
-  };
+  }
 
   return (
-    <div
-      className="menu-modal-backdrop"
-      onClick={handleBackdropClick}
-      onKeyDown={handleBackdropKeyDown}
-      tabIndex={0}
-      role="button"
-      aria-label="Close modal by clicking backdrop"
-    >
-      <div className="menu-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-        <div className="modal-header d-flex justify-content-between align-items-center">
-          <h2 id="modal-title" className="modal-title">
-            {item.name}
-          </h2>
-          <button type="button" className="btn-close" aria-label="Close" onClick={onClose}>
+    <div className="modal-backdrop" onClick={handleBackdropClick}>
+      <div className="modal-content" role="dialog" aria-labelledby="modal-title" aria-modal="true">
+        <div className="modal-header">
+          <h2 id="modal-title">{item.name}</h2>
+          <button className="modal-close" onClick={onClose} aria-label="Close modal">
             ×
           </button>
         </div>
+
         <div className="modal-body">
-          <div className="row">
-            <div className="col-md-5 d-flex align-items-center justify-content-center mb-3 mb-md-0">
-              <img
-                src={item.imageUrl || '/placeholder.svg?height=200&width=200'}
-                alt={item.name}
-                className="modal-image"
-              />
-            </div>
-            <div className="col-md-7">
-              <div className="modal-info">
-                <div className="mb-3">{item.description || '-'}</div>
-                {ingredientsDisplay && (
-                  <div className="mb-3">
-                    <strong>Ingrediënten:</strong>
-                    <br /> {ingredientsDisplay}
-                  </div>
-                )}
-                <div className="mb-3">
-                  <div className="modal-price">
-                    €{typeof item.price === 'number' ? item.price.toFixed(2) : '-'}
-                  </div>
-                </div>
-                <div className="d-flex gap-2">
-                  {item.isVegetarian && <span className="badge bg-success">🥗 Vegetarian</span>}
-                  {item.isSpicy && <span className="badge bg-danger">🌶️ Spicy</span>}
-                </div>
+          <div className="modal-image">
+            <img
+              src={item.imageUrl || `/placeholder.svg?height=300&width=400&query=${item.name}`}
+              alt={item.name}
+              loading="lazy"
+            />
+          </div>
+
+          <div className="modal-details">
+            <p className="modal-description">{item.description}</p>
+
+            {item.ingredients && item.ingredients.length > 0 && (
+              <div className="modal-ingredients">
+                <h3>Ingredients:</h3>
+                <p>{item.ingredients.join(", ")}</p>
               </div>
+            )}
+
+            <div className="modal-price">€{typeof item.price === "number" ? item.price.toFixed(2) : "-"}</div>
+
+            <div className="modal-badges">
+              {item.isVegetarian && <span className="menu-badge badge-veg">🥗 Vegetarian</span>}
+              {item.isSpicy && <span className="menu-badge badge-spicy">🌶️ Spicy</span>}
             </div>
           </div>
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 ItemDetailsModal.propTypes = {
   item: PropTypes.shape({
-    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    name: PropTypes.string,
+    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    name: PropTypes.string.isRequired,
     imageUrl: PropTypes.string,
-    category: PropTypes.string,
     description: PropTypes.string,
+    ingredients: PropTypes.arrayOf(PropTypes.string),
     price: PropTypes.number,
     isVegetarian: PropTypes.bool,
     isSpicy: PropTypes.bool,
-    ingredients: PropTypes.arrayOf(PropTypes.string),
-  }),
+  }).isRequired,
   onClose: PropTypes.func.isRequired,
-};
+}
 
-export default ItemDetailsModal;
+export default ItemDetailsModal
